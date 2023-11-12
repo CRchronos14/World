@@ -37,21 +37,21 @@
         <ul class="main-nav-list">
           <li><a class="main-nav-link" href="#about">關於CR</a></li>
           <li>
-            <a class="main-nav-link link--2-row" href="#">企劃內容</a>
-            <ul class="sub-nav-list">
-              <li>
+            <div class="dropdown-container">
+              <a class="main-nav-link link--2-row" href="#">企劃內容</a>
+              <div class="dropdown-content">
                 <a class="sub-nav-link" href="#Introduction">系統簡介</a>
-              </li>
-              <li>
-                <a class="sub-nav-link" href="#Introduction">副本簡介</a>
-              </li>
-            </ul>
+                <a class="sub-nav-link" href="#dungeom">副本簡介</a>
+              </div>
+            </div>
           </li>
           <li>
             <a class="main-nav-link" href="#planning">招募說明</a>
           </li>
-          <li><a class="main-nav-link" href="#Recruitment">加入我們</a></li>
-          <li><a class="main-nav-link nav-cta" href="#cta">聯絡資訊</a></li>
+          <li><a class="main-nav-link" href="#cta">加入我們</a></li>
+          <li>
+            <a class="main-nav-link nav-cta" href="#connection">聯絡資訊</a>
+          </li>
         </ul>
       </nav>
 
@@ -87,7 +87,7 @@
                 >前導遊戲</a
               >
               <img src="img/LOGO.png" alt="MiZi" width="10%" />
-              <a href="#" class="btn">加入我們 &darr;</a>
+              <a href="#about" class="btn">認識我們</a>
             </div>
 
             <p class="delivered-text">
@@ -104,13 +104,36 @@
         <div class="container">
           <span class="subheading">ABOUT</span>
           <h2 class="heading-secondary">關於</h2>
-          Chronos 是一個遊戲製作的企劃，目前正在製作解謎劇情向的像素 RPG
-          遊戲的準備期間。成員大多是學生，非業界或相關行業的工作者，儘管如此，這個企劃不只是興趣導向的製作。如果你也有興趣和熱忱，希望你也能投入其中，一同做出很棒的遊戲！
-          by 不那麼專業但很有熱忱的一群生物。
+
+          <div class="about-text-box">
+            <p class="about-text">
+              Chronos 是一個遊戲製作的企劃，目前正在製作解謎劇情向的像素 RPG
+              遊戲的準備期間。成員大多是學生，非業界或相關行業的工作者，儘管如此，這個企劃不只是興趣導向的製作。如果你也有興趣和熱忱，希望你也能投入其中，一同做出很棒的遊戲！
+            </p>
+            <p>by 不那麼專業但很有熱忱的一群生物。</p>
+          </div>
+          <p class="hero-description">創作 X 思考 X 開發</p>
         </div>
 
         <div class="container">
-          > 創作 X 思考 X 開發 > [關注] [參與討論] [加入我們]
+          <div class="about-btn">
+            <div class="patch">
+              <div class="patch_inner">
+                <a href="#" class="catch">關注</a>
+                <a href="#" class="catch-2">看我們!!</a>
+              </div>
+            </div>
+            <div class="patch">
+              <div class="patch_inner">
+                <a href="#" class="catch">參與討論</a>
+              </div>
+            </div>
+            <div class="patch">
+              <div class="patch_inner">
+                <a href="#" class="catch">加入我們</a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -120,14 +143,16 @@
           <h2 class="heading-secondary">企劃內容</h2>
         </div>
         <div class="container">
-          在只有死者的世界裡，你將扮演一名「玩家」
-          從故事的演繹中尋找通往「真相」的道路。隱藏的是非善惡將因你的意識決定，作為扮演「玩家」的酬勞，你擁有實現心願的可能性、而實現與否與你所有的行動和思考息息相關。
+          <p class="about-text-box">
+            在只有死者的世界裡，你將扮演一名「玩家」
+            從故事的演繹中尋找通往「真相」的道路。隱藏的是非善惡將因你的意識決定，作為扮演「玩家」的酬勞，你擁有實現心願的可能性、而實現與否與你所有的行動和思考息息相關。
+          </p>
         </div>
       </section>
 
       <section class="section-introduction">
         <div class="container">
-          <span class="subheading">DUNGEOM</span>
+          <span class="subheading" id="dungeom">DUNGEOM</span>
           <h2 class="heading-secondary">副本簡介</h2>
         </div>
         <div class="container grid grid--2-cols grid-center-v">
@@ -392,7 +417,31 @@
       <section class="section-join">
         <div class="container">
           <span class="subheading">JOIN US</span>
-          <h2 class="heading-secondary">加入我們</h2>
+          <h2 class="heading-secondary" id="cta">加入我們</h2>
+
+          <div class="jopn-text-box">
+            <p>
+              流程 > 詳閱所有招募相關資訊 > 準備好作品集 或 有作品的創作平台連結
+              > 填寫表單 > 等待 3 - 14 天一階結果 一階作品集 作品集 90% 表單內容
+              10% 二階面試
+            </p>
+            <p>
+              二階面試 \*招募只選擇「適合」的人 >注意事項
+              這不是有償工作，大家都是為愛發電，你可以爽快選擇開始或結束。
+              你可以依自己的能力與精力選擇工作慢慢進行，但如果某天你突然因「沒時間
+              or 好累 or
+              其他原因」而無法繼續工作了也請不要有負擔，直接告知工作相關的負責人即可，大家都是人完全能理解。
+              ⚠️ 你的時間你決定，但請務必提前告知，你可以 delay 但不要消失。
+              如果你有工作且無故消失一個月，你的工作會直接轉交給其他人並暫時移除雲端權限直到你再次出現。
+              老實說，雖然我們傾向盡量使用各位產出的任何東西，但並不是所有東西都會採用／用得上，我想到的解決方案：如果你願意，你的貢獻會被紀錄下來存放在地圖內的「圖書館」中成為企劃世界觀中的傳說或前人留下的紀錄。
+              工作人員表基本上不會變動，除非你告訴我你不想要存在於上面。 >
+              行為準則 > 尊重他人，保持友善和禮貌。 >
+              避免使用冒犯性的言語或侮辱他人。 > 尊重每個人的意見和觀點。 >
+              提供建設性的回饋。 > 保護他人的隱私和個人資訊。 >
+              遵守社群的規則和指導方針。 > 和平解決爭議或衝突。 > 授權相關 >
+              表單連結 > https://forms.gle/2gUnzoqN8KWTBw7AA
+            </p>
+          </div>
         </div>
       </section>
     </main>
@@ -400,7 +449,7 @@
     <footer class="section-connection">
       <div class="container">
         <span class="subheading">CONNECTION</span>
-        <h2 class="heading-secondary">聯繫方式</h2>
+        <h2 class="heading-secondary" id="connection">聯繫方式</h2>
       </div>
 
       <div class="container grid grid--3-cols">
