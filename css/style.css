@@ -1,0 +1,414 @@
+/*
+
+===Color
+- Primary
+- Greys
+#555
+
+
+*/
+
+/* ************************* */
+/* GENERAL  */
+/* ************************* */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  /* 1140px */
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+.grid {
+  display: grid;
+  gap: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-center-v {
+  align-items: center;
+}
+
+.heading-primary {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.05;
+  background-color: black;
+  color: #fff;
+  letter-spacing: 0.5rem;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.heading-secondary {
+  font-weight: 700;
+  line-height: 1.05;
+  font-size: 3.6rem;
+  margin-bottom: 9.6rem;
+}
+
+.subheading {
+  display: block;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #cacaca;
+  letter-spacing: 0.5rem;
+  margin-bottom: 1.6rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mar {
+  margin: 9.6rem 0;
+}
+
+/* ************************* */
+/* Header  */
+/* ************************* */
+
+.header {
+  height: 9.6rem;
+  /* display: flex; */
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4.8rem;
+}
+
+.logo {
+  height: 2.4rem;
+}
+
+.Name {
+  text-align: center;
+  color: #402a52;
+  font-weight: 700;
+  font-size: 4.4rem;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* ************************* */
+/* Navigation  */
+/* ************************* */
+
+.main-nav-list {
+  display: flex;
+  list-style: none;
+  gap: 3.2rem;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: block;
+  color: #402a52;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.8rem;
+  transition: all 0.3s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #eb67eb;
+}
+
+.link--2-row .sub-nav-list {
+  list-style: none;
+  display: none;
+}
+
+.link--2-row:hover .sub-nav-list {
+  display: block;
+}
+
+.sub-nav-link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin: 2rem 0;
+  transition: all 0.3s;
+
+  padding: 0 1.2rem;
+  color: #8d8d8d;
+}
+
+/* ************************* */
+/* HERO  */
+/* ************************* */
+
+.section-hero {
+  padding: 4.8rem 0 9.6rem 0;
+}
+
+.hero {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.hero-description {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin: 5rem 5rem;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  color: #999;
+}
+
+.hero-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-evenly;
+  margin-bottom: 9.6rem;
+}
+
+.btn:link,
+.btn:visited {
+  display: inline;
+  background-color: #402a52;
+  color: #fff;
+  font-size: 2rem;
+  padding: 1.6rem 3.2rem;
+  border-radius: 15px;
+  text-decoration: none;
+  margin: 0 3rem;
+  transition: all 1s;
+}
+
+.btn:hover,
+.btn:active {
+  display: inline;
+  background-color: #daadff;
+  color: #fff;
+  font-size: 2rem;
+  padding: 1.6rem 3.2rem;
+  border-radius: 15px;
+  text-decoration: none;
+  margin: 0 3rem;
+}
+
+.delivered-text {
+  font-size: 1.2rem;
+  text-align: center;
+  letter-spacing: 0.2rem;
+  color: #999;
+}
+
+/* ************************* */
+/* About  */
+/* ************************* */
+
+.section-about {
+  padding: 9.6rem;
+}
+
+/* ************************* */
+/* Content  */
+/* ************************* */
+.section-content {
+  padding: 9.6rem;
+}
+
+/* ************************* */
+/* Introduction  */
+/* ************************* */
+.section-introduction {
+  padding: 9.6rem 0;
+  background-color: #402a52;
+  color: #fff;
+}
+
+.step-img-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* 填充背景顏色 */
+/* .step-img-box::before {
+  content: "";
+  display: block;
+  width: 50%;
+
+  padding: 30%;
+  background-color: #daadff;
+  border-radius: 30%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+} */
+
+.step-img {
+  width: 50%;
+}
+
+.sub-content {
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+  margin: 0.5rem 0;
+}
+
+.sentence {
+  font-size: 2rem;
+  margin: 1.6rem 0;
+}
+
+.subtitle {
+  font-size: 2.4rem;
+  margin-bottom: 3.6rem;
+}
+
+/* ************************* */
+/* Description  */
+/* ************************* */
+
+.section-description {
+  padding: 9.6rem;
+}
+
+.description-box {
+  margin-bottom: 9.6rem;
+}
+
+.description-text {
+  font-size: 3.2rem;
+  font-weight: 600;
+}
+
+.item-title {
+  font-weight: 700;
+  line-height: 1.05;
+  font-size: 2.4rem;
+  margin-bottom: 4.8rem;
+}
+
+.item-subheading {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #cacaca;
+  letter-spacing: 0.5rem;
+}
+
+.item {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 11px;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.item:hover {
+  transform: translateY(-1.2rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+}
+
+.item-content {
+  padding: 2rem;
+}
+.des-tag {
+  margin-bottom: 1.2rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  background-color: #e7c0e7;
+  border-radius: 100px;
+  margin-right: 0.8rem;
+}
+
+.des-title {
+  font-size: 2rem;
+  color: #402a52;
+  font-weight: 500;
+  margin-bottom: 3.2rem;
+}
+
+.des-works {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.des-work {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.des-img {
+  width: 100%;
+}
+
+/* ************************* */
+/* Connection  */
+/* ************************* */
+
+.section-connection {
+  padding: 9.6rem;
+  background-color: #f0edf3;
+}
+
+.social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.social-logo {
+  width: 9.6rem;
+  height: 9.6rem;
+  margin-bottom: 2.4rem;
+  transition: all 0.3s;
+}
+
+.social-logo:hover {
+  color: #daadff;
+  width: 9.6rem;
+  height: 9.6rem;
+  margin-bottom: 2.4rem;
+}
+
+.web-logo {
+  width: 9.6rem;
+  height: 9.6rem;
+  margin-bottom: 2.4rem;
+}
+
+.social-text {
+  font-size: 1.6rem;
+  letter-spacing: 5px;
+}
