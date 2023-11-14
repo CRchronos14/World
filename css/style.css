@@ -386,7 +386,21 @@ html {
 } */
 
 .step-img {
-  width: 50%;
+  width: 90%;
+}
+
+.Taisho .Taisho2 {
+  display: none;
+}
+
+.Taisho:active .Taisho2,
+.Taisho:focus .Taisho2 {
+  display: block;
+}
+
+.Taisho:active .Taisho1,
+.Taisho:focus .Taisho1 {
+  display: none;
 }
 
 .sub-content {
@@ -420,7 +434,78 @@ html {
 .description-text {
   font-size: 3.2rem;
   font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* 便利貼 */
+
+.sticky-notes,
+.sticky-note {
+  position: relative;
+  list-style: none;
+}
+
+.sticky-notes {
+  overflow: hidden;
+  padding: 3rem;
+}
+
+.sticky-notes .sticky-note {
+  margin: 1rem;
+  float: left;
+}
+
+.sticky-notes .sticky-note a {
+  text-decoration: none;
+  color: #000;
+  background: #ffc;
+  display: block;
+  width: 20rem;
+  height: 20rem;
+  padding: 1rem;
+  box-shadow: 4px 4px 7px rgba(33, 33, 33, 0.5);
+  transition: transform 0.15s linear;
+  margin: 0.5rem;
+}
+
+.sticky-notes .sticky-note a h2 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 10px;
+}
+.sticky-notes .sticky-note p {
+  font-size: 1.4rem;
+  padding: 10px;
+}
+
+.sticky-notes .sticky-note a {
+  transform: rotate(-6deg);
+}
+/* odd even */
+.sticky-notes .sticky-note:nth-child(even) a {
+  transform: rotate(4deg);
+  position: relative;
+  top: 5px;
+  background: #ffc;
+}
+
+.sticky-notes .sticky-note:nth-child(3n) a {
+  transform: rotate(-3deg);
+  position: relative;
+  top: -5px;
+  background: #ffc;
+}
+
+.sticky-notes .sticky-note a:hover,
+.sticky-notes .sticky-note a:focus {
+  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.3);
+  transform: scale(1.25);
+  position: relative;
+  z-index: 5;
+}
+/* 便利貼 */
 
 .item-title {
   font-weight: 700;
@@ -490,6 +575,22 @@ html {
   width: 100%;
 }
 
+/* ************************* */
+/* JOin  */
+/* ************************* */
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
 /* ************************* */
 /* Connection  */
 /* ************************* */
