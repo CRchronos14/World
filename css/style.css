@@ -281,7 +281,7 @@ body {
 /* ************************* */
 
 .section-about {
-  padding: 9.6rem;
+  padding: 9.6rem 0;
 }
 
 .about-text-box {
@@ -291,14 +291,14 @@ body {
 
 /* 圓 */
 
-.about-btn {
+/* .about-btn {
   display: flex;
   align-items: center;
   justify-content: center;
   justify-content: space-evenly;
   margin: 9.6rem 0;
   transition: all 0.5s;
-}
+} */
 
 .patch {
   background: #e7e0e4;
@@ -386,7 +386,7 @@ body {
 /* Content  */
 /* ************************* */
 .section-content {
-  padding: 9.6rem;
+  padding: 9.6rem 0;
 }
 
 /* ************************* */
@@ -462,7 +462,7 @@ body {
 /* ************************* */
 
 .section-description {
-  padding: 9.6rem;
+  padding: 9.6rem 0;
 }
 
 .description-box {
@@ -634,7 +634,7 @@ body {
 /* ************************* */
 
 .section-connection {
-  padding: 9.6rem;
+  padding: 9.6rem 0;
   background-color: #f0edf3;
 }
 
