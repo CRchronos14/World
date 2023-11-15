@@ -11,6 +11,7 @@
     <meta name="ChronosGame" content="A small game recruitment website" />
 
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/queries.css" />
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -25,6 +26,7 @@
 
   <body>
     <header class="header">
+      <!-- nav-open -->
       <div class="Name">
         <!-- <a>
           <img class="logo" alt="Chronos logo" src="img/LOGO.png" />
@@ -35,7 +37,7 @@
       <!-- 導航 -->
       <nav class="main-nav">
         <ul class="main-nav-list">
-          <li><a class="main-nav-link" href="#about">關於CR</a></li>
+          <li><a class="main-nav-link" href="#about">關於</a></li>
           <li>
             <div class="dropdown-container">
               <a class="main-nav-link link--2-row" href="#">企劃內容</a>
@@ -55,11 +57,11 @@
         </ul>
       </nav>
 
-      <!-- 在介面縮小時的導航菜單按鈕設置
+      <!-- 在介面縮小時的導航菜單按鈕設置 -->
       <button class="btn-mobile-nav">
         <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
         <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
-      </button>-->
+      </button>
     </header>
 
     <!-- 主要內容 -->
@@ -113,10 +115,7 @@
             <p>by 不那麼專業但很有熱忱的一群生物。</p>
           </div>
           <p class="hero-description">創作 X 思考 X 開發</p>
-        </div>
-
-        <div class="container">
-          <div class="about-btn">
+          <div class="about-btn grid grid--3-cols">
             <div class="patch">
               <div class="patch_inner">
                 <a href="#" class="catch">關注</a>
@@ -271,7 +270,6 @@
               <li>想要交流創作 idea</li>
               <li>其他理由：精神狀況uwqhe32yr25%^&&@#&*</li>
             </ul> -->
-            -->
           </div>
         </div>
 
@@ -453,12 +451,14 @@
           </p>
         </div>
       </section>
-      <section class="section-join">
+
+      <section class="section-join grid grid--2-cols">
         <div class="container">
           <span class="subheading">JOIN US</span>
           <h2 class="heading-secondary" id="cta">加入我們</h2>
-
-          <div class="jopn-text-box grid grid--3-cols">
+        </div>
+        <div class="container">
+          <div class="jopn-text-box">
             <div>
               <span class="item-subheading">ABOUT</span>
               <p class="item-title">流程</p>
