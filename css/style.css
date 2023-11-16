@@ -8,6 +8,23 @@
 
 */
 
+/* 圖片遮罩 */
+
+.wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("img/girl.jpg") no-repeat;
+  background-size: 100%;
+}
+
+.wrap-mask {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
 /* ************************* */
 /* GENERAL  */
 /* ************************* */
@@ -30,12 +47,20 @@ html {
   overflow-x: hidden;
 }
 
+p {
+  color: var(--fontColor);
+}
+
 body {
   font-family: "Rubik", sans-serif;
   line-height: 1;
   font-weight: 400;
   color: #555;
   overflow-x: hidden;
+
+  --bgColor: #fff;
+  --fontColor: #424242;
+  background: var(--bgColor);
 }
 
 .container {
@@ -54,6 +79,10 @@ body {
 }
 
 .grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--3-1-cols {
   grid-template-columns: repeat(3, 1fr);
 }
 
@@ -113,6 +142,18 @@ body {
   position: relative;
 }
 
+/* .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdf2e9;
+
+  /* Because we want header to be sticky later */
+/* height: 9.6rem;
+  padding: 0 4.8rem;
+  position: relative;
+} */
+
 .logo {
   height: 2.4rem;
 }
@@ -125,6 +166,10 @@ body {
   align-items: center;
   margin-top: 2rem;
   margin-bottom: 1rem;
+}
+
+.btnSwitchTheme {
+  color: #fff;
 }
 
 /* ************************* */
@@ -645,6 +690,8 @@ body {
 }
 
 .social-logo {
+  color: #402a52;
+
   width: 9.6rem;
   height: 9.6rem;
   margin-bottom: 2.4rem;

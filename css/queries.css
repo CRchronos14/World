@@ -42,13 +42,11 @@
   }
 
   .main-nav {
-    background-color: rgba(256, 256, 256, 0.9);
+    background-color: rgba(256, 256, 256, 1);
     position: absolute;
     top: 0;
     left: 0;
-    height: 100%;
     width: 100vh;
-
     transform: translateX(100%);
 
     display: flex;
@@ -57,7 +55,7 @@
 
     transition: all 0.5s ease-in;
 
-    /* 1)hide */
+    /* /* 1)hide */
     opacity: 0;
     /* 2)滑鼠和點擊無法作用 */
     pointer-events: none;
@@ -69,6 +67,7 @@
     opacity: 1;
     pointer-events: auto;
     visibility: visible;
+    transform: translateY(20);
     transform: translateX(0);
   }
 
@@ -81,8 +80,13 @@
   }
 
   .main-nav-list {
+    padding: 4.8rem;
     flex-direction: column;
     gap: 4.8rem;
+  }
+
+  .dropdown-content a {
+    font-size: 2.4rem;
   }
 
   .main-nav-link:link,
@@ -94,13 +98,40 @@
   /* Phone  1*/
   /* ************************* */
 
+  .container {
+    padding: 0 1.6rem;
+  }
   .grid {
     row-gap: 4.8rem;
   }
 
+  .grid--3-cols {
+    gap: 0;
+  }
+
   .grid--2-cols,
-  .grid--3-cols,
+  .grid--3-1-cols,
   .grid--4-cols {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  /* 便利貼大小 */
+
+  .sticky-notes .sticky-note a {
+    width: 22rem;
+    height: 22rem;
+  }
+
+  /* logo */
+
+  .social-logo,
+  .web-logo {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  .social-logo:hover {
+    width: 5.6rem;
+    height: 5.6rem;
   }
 }

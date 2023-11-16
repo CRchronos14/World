@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/queries.css" />
+    <link rel="stylesheet" href="css/dark.css" id="darkTheme" disabled />
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -20,6 +21,8 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+
+    <script defer src="js/script.js"></script>
 
     <title>Chronos &mdash; World</title>
   </head>
@@ -32,6 +35,9 @@
           <img class="logo" alt="Chronos logo" src="img/LOGO.png" />
         </a> -->
         <a>CHRONOS</a>
+        <a class="btnSwitchTheme" id="btnSwitchTheme" href="#">
+          <ion-icon name="moon-outline"></ion-icon
+        ></a>
       </div>
 
       <!-- 導航 -->
@@ -115,7 +121,7 @@
             <p>by 不那麼專業但很有熱忱的一群生物。</p>
           </div>
           <p class="hero-description">創作 X 思考 X 開發</p>
-          <div class="about-btn grid grid--3-cols">
+          <div class="about-btn grid grid--3-1-cols">
             <div class="patch">
               <div class="patch_inner">
                 <a href="#" class="catch">關注</a>
@@ -176,25 +182,20 @@
               您是否能夠想像，被怨恨的蠹蟲啃食著的心。 因為「我」不會放過你。
             </p>
           </div>
-          <div class="step-img-box">
-            <div class="Taisho">
-              <div class="Taisho1">
-                <img
-                  src="img/girl.jpg"
-                  class="step-img"
-                  alt="Promotional picture of Taisho Story"
-                />
-              </div>
 
-              <!-- <div class="Taisho2">
-                <img
-                  src="img/girl-item-2.png"
-                  class="step-img"
-                  alt="Promotional picture of Taisho Story"
-                />
-              </div> -->
+          <div class="step-img-box">
+            <div class="Taisho1">
+              <img
+                src="img/girl.jpg"
+                class="step-img"
+                alt="Promotional picture of Taisho Story"
+              />
             </div>
           </div>
+
+          <!-- <div class="wrap">
+            <div class="wrap-mask"></div>
+          </div> -->
 
           <!-- Step 2 精神病院 -->
 

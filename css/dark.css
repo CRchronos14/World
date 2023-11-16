@@ -1,0 +1,22 @@
+@media (prefers-color-scheme: dark) {
+  body {
+    --bgColor: #212121;
+    --fontColor: #bdbdbd;
+  }
+
+  img,
+  video,
+  iframe {
+    filter: brightness(0.9);
+  }
+
+  .Name {
+    color: #fff;
+    text-shadow: 0 0 1.2rem rgb(1, 225, 255);
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    color: #fff;
+  }
+}
