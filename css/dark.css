@@ -1,3 +1,8 @@
+:root[data-theme="dark"] {
+  --bgColor: #212121;
+  --fontColor: #bdbdbd;
+}
+
 @media (prefers-color-scheme: dark) {
   body {
     --bgColor: #212121;
@@ -19,4 +24,35 @@
   .main-nav-link:visited {
     color: #fff;
   }
+}
+
+body {
+  --bgColor: #212121;
+  --fontColor: #bdbdbd;
+}
+
+img,
+video,
+iframe {
+  filter: brightness(0.9);
+}
+
+.Name {
+  color: #fff;
+  text-shadow: 0 0 1.2rem rgb(1, 225, 255);
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  color: #fff;
+}
+
+.icon-dark[name="sunny-outline"] {
+  display: none;
+  color: #402a52;
+}
+
+.icon-dark[name="moon-outline"] {
+  display: inline-block;
+  color: rgb(199, 247, 253);
 }

@@ -10,19 +10,17 @@
 
 /* 圖片遮罩 */
 
-.wrap {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url("img/girl.jpg") no-repeat;
-  background-size: 100%;
+@media (prefers-color-scheme: light) {
+  body {
+    background: #fafafa;
+    color: #212121;
+  }
 }
-
-.wrap-mask {
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.4);
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #212121;
+    color: #fafafa;
+  }
 }
 
 /* ************************* */
@@ -45,16 +43,25 @@ html {
   /* Percentage of user's browser font-size setting */
   font-size: 62.5%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 p {
   color: var(--fontColor);
 }
 
+@font-face {
+  font-family: "DFPLiHei-Lt";
+  src: url("fonts/DFPLiHei-Lt.ttc") format("truetype-collection");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
-  font-family: "Rubik", sans-serif;
-  line-height: 1;
+  font-family: "DFPLiHei-Lt", sans-serif;
+  line-height: 200%;
   font-weight: 400;
+  letter-spacing: 2.6px;
   color: #555;
   overflow-x: hidden;
 
@@ -95,6 +102,7 @@ body {
 }
 
 .heading-primary {
+  font-family: "Noto Serif TC", serif;
   font-size: 2.4rem;
   font-weight: 700;
   line-height: 1.05;
@@ -106,6 +114,7 @@ body {
 }
 
 .heading-secondary {
+  font-family: "Noto Serif TC", serif;
   font-weight: 700;
   line-height: 1.05;
   font-size: 3.6rem;
@@ -134,7 +143,7 @@ body {
 /* ************************* */
 
 .header {
-  height: 9.6rem;
+  height: 10rem;
   /* display: flex; */
   justify-content: space-between;
   align-items: center;
@@ -159,17 +168,18 @@ body {
 }
 
 .Name {
+  font-family: "Abel", sans-serif;
   text-align: center;
   color: #402a52;
   font-weight: 700;
   font-size: 4.4rem;
   align-items: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
 .btnSwitchTheme {
-  color: #fff;
+  color: #555;
 }
 
 /* ************************* */
@@ -256,6 +266,42 @@ body {
 
 .icon-mobile-nav[name="close-outline"] {
   display: none;
+}
+
+/* dark */
+.icon-dark {
+  height: 3.6rem;
+  width: 3.6rem;
+}
+
+.icon-dark[name="sunny-outline"] {
+  color: #402a52;
+}
+
+.icon-dark[name="moon-outline"] {
+  display: none;
+  color: rgb(234, 209, 255);
+}
+
+/* ************************* */
+/* sticky nav  */
+/* ************************* */
+
+.sticky .header {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 10rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: rgba(255, 255, 255, 0.9);
+  z-index: 999;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+}
+
+.sticky .section-hero {
+  margin-top: 10rem;
 }
 
 /* ************************* */
@@ -439,7 +485,7 @@ body {
 /* ************************* */
 .section-introduction {
   padding: 9.6rem 0;
-  background-color: #402a52;
+  /* background-color: #402a52; */
   color: #fff;
 }
 
@@ -591,6 +637,7 @@ body {
 /* 便利貼 */
 
 .item-title {
+  font-family: "Noto Serif TC", serif;
   font-weight: 700;
   line-height: 1.05;
   font-size: 2.4rem;
