@@ -39,6 +39,10 @@
     position: absolute;
     top: 0;
     left: 0;
+    transform: translate(1rem, 0);
+  }
+
+  .sticky .btn-mobile-nav {
     transform: translate(1rem, 0.5rem);
   }
 

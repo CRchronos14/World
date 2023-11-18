@@ -56,3 +56,11 @@ iframe {
   display: inline-block;
   color: rgb(199, 247, 253);
 }
+
+.icon-mobile-nav {
+  color: #fff;
+}
+
+.sticky .header {
+  background-color: rgba(0, 0, 0, 0.8);
+}
