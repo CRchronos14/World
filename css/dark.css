@@ -3,6 +3,18 @@
   --fontColor: #bdbdbd;
 }
 
+/* cool3d隧道 */
+
+body {
+  background-color: hsl(256, 100%, 5%);
+  font: 30px sans-serif;
+}
+canvas {
+  display: block;
+  position: absolute;
+  z-index: -1;
+}
+/* ************************ */
 @media (prefers-color-scheme: dark) {
   body {
     --bgColor: #212121;
@@ -27,6 +39,14 @@
 }
 
 body {
+  background-image: url("../img/Scence-dark.jpg");
+  margin: 0;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
   --bgColor: #212121;
   --fontColor: #bdbdbd;
 }
@@ -45,6 +65,7 @@ iframe {
 .main-nav-link:link,
 .main-nav-link:visited {
   color: #fff;
+  text-shadow: 0 0 1.2rem rgb(1, 225, 255);
 }
 
 .icon-dark[name="sunny-outline"] {
@@ -64,3 +85,19 @@ iframe {
 .sticky .header {
   background-color: rgba(0, 0, 0, 0.8);
 }
+
+@media (max-width: 38em) {
+  .main-nav {
+    background-color: rgba(0, 0, 0, 1);
+  }
+}
+
+.about-text-box {
+  background-color: #212121;
+}
+
+.section-hero {
+  background-color: transparent;
+}
+
+/* coolbtu */

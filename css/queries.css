@@ -67,6 +67,8 @@
     pointer-events: none;
     /* 3)對閱讀文件隱藏 */
     visibility: hidden;
+
+    z-index: 1;
   }
 
   .nav-open .main-nav {
