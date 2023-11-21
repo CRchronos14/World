@@ -86,7 +86,7 @@ body {
   --bgColor: #fff;
   --fontColor: #424242;
   background: var(--bgColor);
-  background-image: url("../img/Scence-light.png");
+  background-image: url("../img/Scence-light-1.webp");
   margin: 0;
   background-attachment: fixed;
   height: 100vh;
