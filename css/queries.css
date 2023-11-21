@@ -40,6 +40,7 @@
     top: 0;
     left: 0;
     transform: translate(1rem, 0);
+    z-index: 2;
   }
 
   .sticky .btn-mobile-nav {
@@ -144,5 +145,9 @@
   .social-logo:hover {
     width: 5.6rem;
     height: 5.6rem;
+  }
+
+  .btnSwitchTheme {
+    float: right;
   }
 }

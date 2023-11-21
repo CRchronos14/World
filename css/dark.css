@@ -60,12 +60,31 @@ iframe {
 .Name {
   color: #fff;
   text-shadow: 0 0 1.2rem rgb(1, 225, 255);
+  text-align: center;
 }
 
 .main-nav-link:link,
 .main-nav-link:visited {
   color: #fff;
   text-shadow: 0 0 1.2rem rgb(1, 225, 255);
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  /* font-size: 2.4rem; */
+  color: #ffffff;
+  text-shadow: 0 0 3rem rgb(1, 225, 255);
+}
+
+/* 深色模式按鈕 */
+.btnSwitchTheme {
+  padding: 0 1rem;
+}
+
+.btnSwitchTheme:hover {
+  background-color: rgba(249, 245, 245, 0.1);
+  padding: 0 1rem;
+  border-radius: 50%;
 }
 
 .icon-dark[name="sunny-outline"] {
@@ -92,12 +111,32 @@ iframe {
   }
 }
 
-.about-text-box {
-  background-color: #212121;
-}
-
 .section-hero {
   background-color: transparent;
 }
 
+/* about */
+.section-about {
+  background-color: transparent;
+}
+
 /* coolbtu */
+
+.btn:link,
+.btn:visited {
+  background-color: transparent;
+  border-color: #c1beff;
+  border-style: solid;
+  color: #fff;
+  box-shadow: 0 0 1.2rem rgb(1, 225, 255);
+}
+
+.btn:hover,
+.btn:active {
+  background-color: transparent;
+  border-color: #f4e7ff;
+  border-style: solid;
+  color: #fff;
+  box-shadow: 0 0 2rem rgb(1, 225, 255);
+  text-shadow: 0 0 2rem rgb(1, 225, 255);
+}
