@@ -107,7 +107,22 @@
   /* ************************* */
 
   .sticky .header {
-    height: 6rem;
+    height: 6.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sticky .Name a {
+    padding: 0 1.2rem;
+  }
+
+  .Name a {
+    padding: 0 1.2rem;
+  }
+
+  .sticky .Name {
+    margin-top: 0;
   }
 
   .container {
