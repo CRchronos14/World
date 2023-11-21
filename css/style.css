@@ -123,7 +123,7 @@ body {
 .heading-secondary {
   font-family: "Noto Serif TC", serif;
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 2;
   font-size: 3.6rem;
   margin-bottom: 9.6rem;
 }
@@ -384,6 +384,9 @@ body {
     border-color: transparent;
   }
 }
+
+/* ///////button */
+
 /* ****************************** */
 
 .hero-description {
@@ -547,6 +550,7 @@ body {
 /* ************************* */
 .section-content {
   padding: 9.6rem 0;
+  background-color: #fff;
 }
 
 /* ************************* */
@@ -554,7 +558,7 @@ body {
 /* ************************* */
 .section-introduction {
   padding: 9.6rem 0;
-  /* background-color: #402a52; */
+  background-color: #ffffff;
   /* color: #fff; */
 }
 
@@ -565,23 +569,6 @@ body {
   justify-content: center;
   z-index: 1;
 }
-
-/* 填充背景顏色 */
-/* .step-img-box::before {
-  content: "";
-  display: block;
-  width: 50%;
-
-  padding: 30%;
-  background-color: #daadff;
-  border-radius: 30%;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-} */
 
 .step-img {
   width: 90%;
@@ -623,6 +610,7 @@ body {
 
 .section-description {
   padding: 9.6rem 0;
+  background-color: #fff;
 }
 
 .description-box {
@@ -630,6 +618,7 @@ body {
 }
 
 .description-text {
+  color: #000;
   font-size: 3.2rem;
   font-weight: 600;
   display: flex;
@@ -833,6 +822,322 @@ body {
   letter-spacing: 5px;
 }
 
-/**************** 漸層效果導航 ***************/
+/**************** 特殊字體效果 ***************/
+/* @import url(https://fonts.googleapis.com/css?family=Share+Tech+Mono); */
+
+body {
+  font: 0.8em/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    sans-serif;
+  color: white;
+}
+
+.filterwrapper {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.svgtext {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.intro {
+  margin-bottom: 3em;
+}
+
+hr {
+  height: 0;
+  border-bottom: solid #cccccc 1px;
+}
+
+.glitch-filter-example {
+  display: block;
+  position: relative;
+  text-align: center;
+  margin: 0;
+  padding: 4em 0 2em;
+  min-width: 490px;
+}
+
+.glitch-filter-example__heading {
+  margin: 0;
+  margin-bottom: 1em;
+  padding: 0;
+  display: block;
+  position: relative;
+}
+
+.glitch-filter-example__filtered-text {
+  filter: url(#filter);
+  fill: white;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.top-r,
+.bot-r,
+.top-g,
+.bot-g {
+  stroke: #ffffff;
+}
+
+.top-r {
+  stroke-width: 100px;
+  -webkit-animation: topani 3.5s linear infinite;
+  animation: topani 3.5s linear infinite;
+}
+
+.bot-r {
+  stroke-width: 100px;
+  -webkit-animation: botani 4s linear infinite;
+  animation: botani 4s linear infinite;
+}
+
+.top-g {
+  stroke-width: 50px;
+  animation: topani 4s linear reverse infinite;
+}
+
+.bot-g {
+  stroke-width: 50%;
+  animation: botani 3.5s linear reverse infinite;
+}
+
+@-webkit-keyframes topani {
+  3% {
+    stroke-width: 181px;
+  }
+  12% {
+    stroke-width: 177px;
+  }
+  16% {
+    stroke-width: 98px;
+  }
+  29% {
+    stroke-width: 197px;
+  }
+  33% {
+    stroke-width: 193px;
+  }
+  40% {
+    stroke-width: 47px;
+  }
+  54% {
+    stroke-width: 79px;
+  }
+  59% {
+    stroke-width: 24px;
+  }
+  68% {
+    stroke-width: 16px;
+  }
+  79% {
+    stroke-width: 75px;
+  }
+  81% {
+    stroke-width: 194px;
+  }
+  90% {
+    stroke-width: 104px;
+  }
+  99% {
+    stroke-width: 108px;
+  }
+}
+
+@keyframes topani {
+  3% {
+    stroke-width: 181px;
+  }
+  12% {
+    stroke-width: 177px;
+  }
+  16% {
+    stroke-width: 98px;
+  }
+  29% {
+    stroke-width: 197px;
+  }
+  33% {
+    stroke-width: 193px;
+  }
+  40% {
+    stroke-width: 47px;
+  }
+  54% {
+    stroke-width: 79px;
+  }
+  59% {
+    stroke-width: 24px;
+  }
+  68% {
+    stroke-width: 16px;
+  }
+  79% {
+    stroke-width: 75px;
+  }
+  81% {
+    stroke-width: 194px;
+  }
+  90% {
+    stroke-width: 104px;
+  }
+  99% {
+    stroke-width: 108px;
+  }
+}
+@-webkit-keyframes botani {
+  2% {
+    stroke-width: 148px;
+  }
+  9% {
+    stroke-width: 188px;
+  }
+  12% {
+    stroke-width: 84px;
+  }
+  18% {
+    stroke-width: 51px;
+  }
+  24% {
+    stroke-width: 49px;
+  }
+  29% {
+    stroke-width: 69px;
+  }
+  32% {
+    stroke-width: 81px;
+  }
+  39% {
+    stroke-width: 19px;
+  }
+  41% {
+    stroke-width: 149px;
+  }
+  48% {
+    stroke-width: 108px;
+  }
+  54% {
+    stroke-width: 162px;
+  }
+  59% {
+    stroke-width: 156px;
+  }
+  60% {
+    stroke-width: 111px;
+  }
+  69% {
+    stroke-width: 185px;
+  }
+  73% {
+    stroke-width: 119px;
+  }
+  75% {
+    stroke-width: 62px;
+  }
+  83% {
+    stroke-width: 94px;
+  }
+  88% {
+    stroke-width: 97px;
+  }
+  91% {
+    stroke-width: 45px;
+  }
+}
+@keyframes botani {
+  2% {
+    stroke-width: 148px;
+  }
+  9% {
+    stroke-width: 188px;
+  }
+  12% {
+    stroke-width: 84px;
+  }
+  18% {
+    stroke-width: 51px;
+  }
+  24% {
+    stroke-width: 49px;
+  }
+  29% {
+    stroke-width: 69px;
+  }
+  32% {
+    stroke-width: 81px;
+  }
+  39% {
+    stroke-width: 19px;
+  }
+  41% {
+    stroke-width: 149px;
+  }
+  48% {
+    stroke-width: 108px;
+  }
+  54% {
+    stroke-width: 162px;
+  }
+  59% {
+    stroke-width: 156px;
+  }
+  60% {
+    stroke-width: 111px;
+  }
+  69% {
+    stroke-width: 185px;
+  }
+  73% {
+    stroke-width: 119px;
+  }
+  75% {
+    stroke-width: 62px;
+  }
+  83% {
+    stroke-width: 94px;
+  }
+  88% {
+    stroke-width: 97px;
+  }
+  91% {
+    stroke-width: 45px;
+  }
+}
 
 /* ******************************************** */
+/* ******************************************** */
+.invert {
+  -webkit-filter: invert(1);
+}
+/* ***************特殊文字2***************************** */
+
+/* @import "https://fonts.googleapis.com/css?family=Roboto+Mono:100";
+html,
+body {
+  font-family: "Roboto Mono", monospace;
+  height: 100%;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.text {
+  font-weight: 100;
+  font-size: 28px;
+  color: rgb(6, 6, 6);
+}
+.dud {
+  color: #757575;
+} */
+
+/* 卡片 */

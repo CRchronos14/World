@@ -14,6 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Abel&family=Noto+Serif+TC:wght@200;300;400;500;600;700;900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/try-1.css" />
+    <script defer src="js/try-2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +44,125 @@
     <script defer src="js/script.js"></script>
 
     <title>Chronos &mdash; World</title>
+
+    <!-- 特殊字體 -->
+    <svg
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      width="100%"
+      height="100%"
+      class="filterwrapper"
+    >
+      <defs>
+        <svg
+          id="glitchmask-r"
+          width="100%"
+          height="100%"
+          viewbox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <line class="top-r" x1="0" y1="0" x2="100%" y2="0"></line>
+          <line class="bot-r" x1="0" y1="100%" x2="100%" y2="100%"></line>
+        </svg>
+        <svg
+          id="glitchmask-g"
+          width="100%"
+          height="100%"
+          viewbox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          <line class="top-g" x1="0" y1="0" x2="100%" y2="0"></line>
+          <line class="bot-g" x1="0" y1="100%" x2="100%" y2="100%"></line>
+        </svg>
+
+        <filter
+          color-interpolation-filters="sRGB"
+          id="filter"
+          width="100%"
+          heigth="100%"
+          x="0"
+          y="0"
+        >
+          <feFlood flood-color="black" result="black" />
+
+          <!-- red text start -->
+          <feFlood flood-color="red" result="REDTXT_FLOOD_10" />
+          <feComposite
+            operator="in"
+            in="REDTXT_FLOOD_10"
+            in2="SourceAlpha"
+            result="REDTXT_COMP_20"
+          />
+          <feOffset
+            in="SourceGraphic"
+            dx="-2"
+            dy="0"
+            result="REDTXT_OFFSET_30"
+          />
+          <feMerge result="REDTXT_MERGE_40">
+            <feMergeNode in="black" />
+            <feMergeNode in="REDTXT_COMP_20" />
+            <feMergeNode in="REDTXT_OFFSET_30" />
+          </feMerge>
+          <feImage
+            preserveAspectRatio="none"
+            id="mask-r"
+            result="REDTXT_IMG_50"
+            xlink:href="#glitchmask-r"
+          />
+          <feComposite
+            in2="REDTXT_IMG_50"
+            in="REDTXT_MERGE_40"
+            operator="out"
+            result="REDTXT_COMP_60"
+          />
+          <!-- red text end -->
+
+          <!-- green text start -->
+          <feFlood flood-color="limegreen" result="GREENTXT_FLOOD_10" />
+          <feComposite
+            operator="in"
+            in="GREENTXT_FLOOD_10"
+            in2="SourceAlpha"
+            result="GREENTXT_COMP_20"
+          />
+          <feOffset
+            in="SourceGraphic"
+            dx="2"
+            dy="0"
+            result="GREENTXT_OFFSET_30"
+          />
+          <feMerge result="GREENTXT_MERGE_40">
+            <feMergeNode in="black" />
+            <feMergeNode in="GREENTXT_COMP_20" />
+            <feMergeNode in="GREENTXT_OFFSET_30" />
+          </feMerge>
+          <feImage
+            preserveAspectRatio="none"
+            id="mask-g"
+            result="GREENTXT_IMG_50"
+            xlink:href="#glitchmask-g"
+          />
+          <feComposite
+            in2="GREENTXT_IMG_50"
+            in="GREENTXT_MERGE_40"
+            operator="out"
+            result="GREENTXT_COMP_60"
+          />
+          <!-- green text end -->
+
+          <feMerge result="MERGE_10">
+            <feMergeNode in="SourceGraphic" />
+            <feMergeNode in="REDTXT_COMP_60" />
+            <feMergeNode in="GREENTXT_COMP_60" />
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
   </head>
+
+  <!-- 內文 -->
 
   <body>
     <canvas id="c"></canvas>
@@ -57,32 +179,6 @@
 
       <!-- 導航 -->
       <nav class="main-nav">
-        <!-- <div class="content">
-          <div class="container">
-            <div class="timeline">
-              <div class="timeline__stepper">
-                <div class="timeline__step is-active">
-                  <p class="timeline__step-title">Brainstorm</p>
-                </div>
-                <div class="timeline__step">
-                  <p class="timeline__step-title">Discuss</p>
-                </div>
-                <div class="timeline__step">
-                  <p class="timeline__step-title">Make</p>
-                </div>
-                <div class="timeline__step">
-                  <p class="timeline__step-title">Select</p>
-                </div>
-                <div class="timeline__step">
-                  <p class="timeline__step-title">SEO</p>
-                </div>
-                <div class="timeline__step">
-                  <p class="timeline__step-title">Happy</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
         <ul class="main-nav-list">
           <li><a class="main-nav-link" href="#about">關於我們</a></li>
           <li>
@@ -110,12 +206,21 @@
       <section class="section-hero">
         <div class="hero">
           <div class="hero-text-box">
-            <h1 class="heading-primary">歡迎來到Chronos。<br /></h1>
-            <h1 class="heading-primary">
-              面對「認知外」的世界與故事，你會選擇毀滅還是適應？
-            </h1>
+            <!-- 特殊字-dark -->
+            <figure class="glitch-filter-example heading-primary invert">
+              <text
+                class="glitch-filter-example__filtered-text"
+                y="50%"
+                text-anchor="middle"
+                x="50%"
+                transform="translate(0 34)"
+              >
+                歡迎來到Chronos。<br /><br />
+                面對「認知外」的世界與故事，你會選擇毀滅還是適應？
+              </text>
+            </figure>
             <!-- <br>使用的時候注意一下 -->
-            <p class="hero-description">
+            <!-- <p class="hero-description">
               歡迎來到Chronos。<br />
               您可能會開始思考「這是什麼情況?」
               別擔心，因為您再如何絞盡腦汁也無法用小巧精緻的腦袋明瞭這一切。
@@ -123,14 +228,12 @@
               您已經死了——由衷希望您明白「死亡」這個單詞的意義。
               無法歸屬的靈魂，也就是您，榮幸或不幸地被帶到了這裡。
               接下來請您睜開雙眼，與此同時，也別忘記自己的身分。
-            </p>
+            </p> -->
 
             <div class="hero-btn">
               <a href="https://crchronos14.github.io/Story/" class="btn"
                 >前導遊戲</a
               >
-              <!-- <img src="img/LOGO-dark.png" alt="MiZi" width="10%" /> -->
-              <!-- <a href="#about" class="btn">認識我們</a> -->
             </div>
 
             <p class="delivered-text">
@@ -160,33 +263,15 @@
             <p>by 不那麼專業但很有熱忱的一群生物。</p>
           </div>
           <p class="hero-description">創作 X 思考 X 開發</p>
-          <!-- 圓形按鈕 -->
-          <!-- <div class="about-btn grid grid--3-1-cols">
-            <div class="patch">
-              <div class="patch_inner">
-                <a href="#" class="catch">關注</a>
-                <a href="#" class="catch-2">看我們!!</a>
-              </div>
-            </div>
-            <div class="patch">
-              <div class="patch_inner">
-                <a href="#" class="catch">參與討論</a>
-              </div>
-            </div>
-            <div class="patch">
-              <div class="patch_inner">
-                <a href="#" class="catch">加入我們</a>
-              </div>
-            </div>
-          </div> -->
         </div>
       </section>
 
+      <div class="container text-center">
+        <span class="subheading-1">INTRODUCTION</span>
+        <h2 class="heading-secondary-1">企劃內容</h2>
+      </div>
+
       <section class="section-content" id="Introduction">
-        <div class="container">
-          <span class="subheading">INTRODUCTION</span>
-          <h2 class="heading-secondary">企劃內容</h2>
-        </div>
         <div class="container">
           <p class="about-text-box">
             在只有死者的世界裡，你將扮演一名「玩家」
@@ -267,11 +352,12 @@
         </div>
       </section>
 
+      <div class="container text-center">
+        <span class="subheading-1">ABOUT</span>
+        <h2 class="heading-secondary-1">招募資訊</h2>
+      </div>
+
       <section class="section-description" id="planning">
-        <div class="container">
-          <span class="subheading">ABOUT</span>
-          <h2 class="heading-secondary">招募資訊</h2>
-        </div>
         <!-- 說明 -->
         <div class="container description-box grid grid--2-cols">
           <div class="description-text container">
@@ -305,20 +391,126 @@
                 </a>
               </li>
             </ul>
-            <!-- <li>有興趣製作遊戲、想要學習了解遊戲相關內容</li>
-              <li>想做系列作品集</li>
-              <li>想應用練習正在或已學習的東西</li>
-              <li>想要交流創作 idea</li>
-              <li>其他理由：精神狀況uwqhe32yr25%^&&@#&*</li>
-            </ul> -->
           </div>
         </div>
+      </section>
 
-        <div class="container text-center">
-          <span class="item-subheading">GROUP</span>
-          <p class="item-title">組別項目</p>
+      <!-- 組別介紹 -->
+      <section class="section-card">
+        <div class="cards-wrapper">
+          <div class="container card-header">
+            <span class="item-subheading-1">GROUP</span>
+            <p class="item-title-1">組別項目</p>
+          </div>
+          <div class="cards">
+            <button class="card card3" tabindex="-1">
+              <!-- <img
+              src="img/sort/9.png"
+              class="des-img"
+              alt="Event and Script Planning Group"
+            /> -->
+
+              <div class="item-content">
+                <p class="card-title">活動與劇本規劃組</p>
+                <p class="card-text">
+                  如果你喜歡思考或者組織，無論是只是零散的小idea、故事的小段落、活動或者解謎謎題，甚至是長篇故事規劃，這邊歡迎你。
+                </p>
+                <ul class="card-li">
+                  <li class="des-work-1">
+                    - 我的想法超酷但一直用不到或不知道用在哪裡
+                  </li>
+                  <li class="des-work-1">
+                    - 我不擅長想故事但很喜歡寫短句或漂亮文字
+                  </li>
+                  <li class="des-work-1">
+                    - 我需要有人和我討論故事、催稿維持創作動力
+                  </li>
+                  <li class="des-work-1">- 我很擅長組織、審稿及修改文字</li>
+                  <li class="des-work-1">- 我看過很多作品，總能給出很多心得</li>
+                </ul>
+                <ul class="des-works">
+                  <li class="des-work">
+                    □【構想】世界觀的背景、規則、事件與事件中角色與生物之設定
+                  </li>
+                  <li class="des-work">□【構思】資訊傳遞的方式、障礙與解法</li>
+                  <li class="des-work">
+                    □【平衡】事件中的戰鬥或資訊傳遞時平衡各方立場的強弱
+                  </li>
+                  <li class="des-work">
+                    □【呈現】故事：以短文、對話、信件或歌謠等方式
+                  </li>
+                  <li class="des-work">
+                    □【審視】故事和內容的合理性、故事性、可讀性
+                  </li>
+                </ul>
+              </div>
+            </button>
+
+            <button class="card card2" tabindex="-1">
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 200">
+                  <path
+                    d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2s-6.3 25.5 4.1 33.7l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L477.4 348.9c1.7-9.4 2.6-19 2.6-28.9h64c17.7 0 32-14.3 32-32s-14.3-32-32-32h-64.3c-1.1-14.1-5-27.5-11.1-39.5.7-.6 1.4-1.2 2.1-1.9l64-64c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-64 64c-.7.7-1.3 1.4-1.9 2.1-14.3-7.3-30.4-11.4-47.5-11.4H264c-8.3 0-16.3 1-24 2.8L38.8 5.1zM320 0c-53 0-96 43-96 96v3.6c0 15.7 12.7 28.4 28.4 28.4h135.2c15.7 0 28.4-12.7 28.4-28.4V96c0-53-43-96-96-96zM160.3 256H96c-17.7 0-32 14.3-32 32s14.3 32 32 32h64c0 24.6 5.5 47.8 15.4 68.6-2.2 1.3-4.2 2.9-6 4.8l-64 64c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l63.1-63.1a159.2 159.2 0 0 0 90.3 39.6V335.5L166.7 227.3c-3.4 9-5.6 18.7-6.4 28.7zM336 479.2c36.6-3.6 69.7-19.6 94.8-43.8L336 360.7v118.5z"
+                  />
+                </svg>
+              </div>
+              <h2>Card 2</h2>
+              <h4>Ipsum</h4>
+            </button>
+
+            <button class="card card1" tabindex="-1">
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 200">
+                  <path
+                    d="M308.5 135.3a22 22 0 0 0 6.2-25 171 171 0 0 0-7.6-15.5l-3.1-5.4c-3-5-6.3-9.9-9.8-14.6a22 22 0 0 0-24.7-7.1L241.3 77c-10.7-8.8-23-16-36.2-20.9l-6.1-29a21.9 21.9 0 0 0-18.5-17.8c-6.6-.9-13.3-1.3-20.1-1.3h-.7c-6.8 0-13.5.4-20.1 1.2A22 22 0 0 0 121.1 27L115 56.1c-13.3 5-25.5 12.1-36.2 20.9l-28.3-9.2c-9-3-19-.5-24.7 7.1-3.5 4.7-6.8 9.6-9.9 14.6l-3 5.3c-2.8 5-5.3 10.2-7.6 15.6a22.1 22.1 0 0 0 6.2 25l22.2 19.8a128.8 128.8 0 0 0 0 41.7l-22.2 19.8a22 22 0 0 0-6.2 25 187 187 0 0 0 7.6 15.6l3 5.2c3 5.1 6.3 9.9 9.9 14.6a22 22 0 0 0 24.7 7.1l28.2-9.3c10.7 8.8 23 16 36.2 20.9l6.1 29.1a21.9 21.9 0 0 0 18.5 17.8 172 172 0 0 0 40.8 0 22 22 0 0 0 18.5-17.8l6.1-29.1c13.3-5 25.5-12.1 36.2-20.9l28.2 9.3c9 3 19 .5 24.7-7.1 3.5-4.7 6.8-9.5 9.8-14.6l3.1-5.4a171 171 0 0 0 7.6-15.5c3.7-8.7.9-18.6-6.2-25l-22.2-19.8a131 131 0 0 0 0-41.8l22.2-19.8zM112 176a48 48 0 1 1 96 0 48 48 0 1 1-96 0zm392.7 324.5a22 22 0 0 0 25 6.2 171 171 0 0 0 15.5-7.6l5.4-3.1c5-3 9.9-6.3 14.6-9.8a22 22 0 0 0 7.1-24.7l-9.3-28.2c8.8-10.7 16-23 20.9-36.2L613 391a21.9 21.9 0 0 0 17.8-18.5 172 172 0 0 0 0-40.8 22 22 0 0 0-17.8-18.5l-29.1-6.2c-5-13.3-12.1-25.5-20.9-36.2l9.3-28.2c3-9 .5-19-7.1-24.7-4.7-3.5-9.6-6.8-14.6-9.9l-5.3-3c-5-2.8-10.2-5.3-15.6-7.6a22.1 22.1 0 0 0-25 6.2l-19.8 22.2a131 131 0 0 0-41.8 0l-19.8-22.2a22 22 0 0 0-25-6.2 187 187 0 0 0-15.6 7.6l-5.2 3a144 144 0 0 0-14.6 9.9 22 22 0 0 0-7.1 24.7l9.3 28.2c-8.8 10.7-16 23-20.9 36.2l-29.1 6a21.9 21.9 0 0 0-17.8 18.5 172 172 0 0 0 0 40.8 22 22 0 0 0 17.8 18.5l29.1 6.1c5 13.3 12.1 25.5 20.9 36.2l-9.3 28.2c-3 9-.5 19 7.1 24.7 4.7 3.5 9.5 6.8 14.6 9.8l5.4 3.1a171 171 0 0 0 15.5 7.6c8.7 3.7 18.6.9 25-6.2l19.8-22.2a131 131 0 0 0 41.8 0l19.8 22.2zM464 304a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+                  />
+                </svg>
+              </div>
+              <h2>Card 3</h2>
+              <h4>dolor</h4>
+            </button>
+
+            <button class="card card4" tabindex="-1">
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 200">
+                  <path
+                    d="M176 24a24 24 0 1 0-48 0v40a64 64 0 0 0-64 64H24a24 24 0 1 0 0 48h40v56H24a24 24 0 1 0 0 48h40v56H24a24 24 0 1 0 0 48h40a64 64 0 0 0 64 64v40a24 24 0 1 0 48 0v-40h56v40a24 24 0 1 0 48 0v-40h56v40a24 24 0 1 0 48 0v-40a64 64 0 0 0 64-64h40a24 24 0 1 0 0-48h-40v-56h40a24 24 0 1 0 0-48h-40v-56h40a24 24 0 1 0 0-48h-40a64 64 0 0 0-64-64V24a24 24 0 1 0-48 0v40h-56V24a24 24 0 1 0-48 0v40h-56V24zm-16 104h192a32 32 0 0 1 32 32v192a32 32 0 0 1-32 32H160a32 32 0 0 1-32-32V160a32 32 0 0 1 32-32zm192 32H160v192h192V160z"
+                  />
+                </svg>
+              </div>
+              <h2>Card 4</h2>
+              <h4>sit amet</h4>
+            </button>
+
+            <button class="card card5" tabindex="-1">
+              <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 200">
+                  <path
+                    d="M418.4 157.9A80 80 0 1 0 320 77.5l-183.8 73.6a80 80 0 1 0-22.1 129.3l145.6 127.4a80 80 0 1 0 120.9-42.2l37.8-207.7zm-262.1 74.3a78.3 78.3 0 0 0 3.7-21.7L343.8 137c3.6 3.5 7.4 6.7 11.6 9.5l-37.8 207.6a77.8 77.8 0 0 0-15.8 5.5L156.3 232.2z"
+                  />
+                </svg>
+              </div>
+              <h2>Card 5</h2>
+              <h4>consectetur</h4>
+            </button>
+          </div>
+          <button class="arrow-btn arrow-btn-prev" tabindex="0">
+            <svg viewBox="0 0 256 512">
+              <path
+                d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"
+              />
+            </svg>
+          </button>
+          <button class="arrow-btn arrow-btn-next" tabindex="0">
+            <svg viewBox="0 0 256 512">
+              <path
+                d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z"
+              />
+            </svg>
+          </button>
         </div>
-
+      </section>
+      <section class="section-description" id="planning">
         <!-- 組別說明 -->
         <div class="container grid grid--4-cols mar">
           <div class="item">

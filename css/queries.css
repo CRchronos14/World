@@ -106,6 +106,10 @@
   /* Phone  1*/
   /* ************************* */
 
+  .heading-primary {
+    font-size: 2.4rem;
+    min-width: 200px;
+  }
   .sticky .header {
     height: 6.6rem;
     display: flex;
@@ -164,5 +168,21 @@
 
   .btnSwitchTheme {
     float: right;
+  }
+
+  /* 卡片 */
+  .cards {
+    position: absolute;
+    top: 15px;
+    left: 20%;
+    transform: translateX(-50px);
+    display: flex;
+    flex-direction: row;
+    width: 2600px;
+    justify-content: space-between;
+  }
+
+  .card {
+    width: 440px;
   }
 }
