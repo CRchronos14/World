@@ -126,3 +126,14 @@ function moveCards(dur = 0) {
       0
     );
 }
+// -----------------視差滾動-------------------------
+document.addEventListener("DOMContentLoaded", function () {
+  let background = document.querySelector(".background-image");
+  let content = document.querySelector(".parallax-content");
+
+  document.addEventListener("scroll", function () {
+    let scrollPosition = window.scrollY;
+    background.style.transform = "translateY(" + scrollPosition * 0.5 + "px)";
+    content.style.transform = "translateY(" + scrollPosition * 0.8 + "px)";
+  });
+});

@@ -42,6 +42,7 @@ html {
   font-size: 62.5%;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  overflow: scroll;
 }
 
 p {
@@ -74,6 +75,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
+  overflow: scroll;
 }
 
 .container {
@@ -558,7 +560,7 @@ body {
 /* ************************* */
 .section-introduction {
   padding: 9.6rem 0;
-  background-color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.3);
   /* color: #fff; */
 }
 
@@ -602,6 +604,53 @@ body {
 .subtitle {
   font-size: 2.4rem;
   margin-bottom: 3.6rem;
+}
+
+/* 副本視差滾動 */
+
+.parallax-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-image {
+  background-image: url("../img/girl.jpg");
+  background-size: 80%;
+  /* background-attachment: fixed; */
+  background-position: 105% 25%;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure the background is behind the content */
+}
+
+/* .background-image {
+  background-image: url("../img/mental_hospital-3.jpg");
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;  
+  height: 100%;
+  z-index: -1; /* Ensure the background is behind the content */
+
+.background-image-2 {
+  background-image: url("../img/mental_hospital-1.jpg");
+  background-size: 80%;
+  /* background-attachment: fixed; */
+  background-position: 0% 50%;
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 1; /* Ensure the content is  above the background */
+  padding: 20px;
 }
 
 /* ************************* */
@@ -1139,5 +1188,3 @@ body {
 .dud {
   color: #757575;
 } */
-
-/* 卡片 */

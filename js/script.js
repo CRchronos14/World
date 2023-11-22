@@ -1,5 +1,29 @@
 console.log("HOLLO");
 
+// -----------------視差滾動-------------------------
+
+// 等待整個 HTML 文檔的加載完成後執行
+document.addEventListener("DOMContentLoaded", function () {
+  // 選擇具有 ".background-image" 類的元素，這是背景圖片的容器
+  let background = document.querySelector(".background-image");
+
+  // 選擇具有 ".parallax-content" 類的元素，這是包含視差效果內容的容器
+  let content = document.querySelector(".parallax-content");
+
+  // 監聽滾動事件
+  document.addEventListener("scroll", function () {
+    // 獲取垂直滾動的距離
+    let scrollPosition = window.scrollY;
+    console.log("scrollPosition", scrollPosition);
+
+    // 通過調整背景容器的 transform 屬性，創建視差效果（0.5 是一個調整的乘數）
+    background.style.transform = "translateY(" + scrollPosition * 0.5 + "px)";
+
+    // 通過調整內容容器的 transform 屬性，創建更大的視差效果（0.8 是一個調整的乘數）
+    content.style.transform = "translateY(" + scrollPosition * 0.8 + "px)";
+  });
+});
+
 //////////////////////////////////////////////////////////
 // Make mobile navigation work
 
@@ -139,25 +163,47 @@ allLinks.forEach(function (link) {
 ///////////////////////////////////////////////////////////
 // Sticky navigation
 
-const sectionHeroEl = document.querySelector(".section-hero");
-const obs = new IntersectionObserver(
-  function (entries) {
-    const ent = entries[0];
-    console.log(ent);
-    if (ent.isIntersecting === false) {
-      document.body.classList.add("sticky");
+if ($(window).width() > 450) {
+  const sectionHeroEl = document.querySelector(".section-hero");
+  const obs = new IntersectionObserver(
+    function (entries) {
+      const ent = entries[0];
+      console.log(ent);
+      if (ent.isIntersecting === false) {
+        document.body.classList.add("sticky");
+      }
+      if (ent.isIntersecting === true) {
+        document.body.classList.remove("sticky");
+      }
+    },
+    {
+      root: null,
+      threshold: 0,
+      rootMargin: "-145px",
     }
-    if (ent.isIntersecting === true) {
-      document.body.classList.remove("sticky");
+  );
+  obs.observe(sectionHeroEl);
+} else if ($(window).width() < 450) {
+  const sectionHeroEl = document.querySelector(".section-hero");
+  const obs = new IntersectionObserver(
+    function (entries) {
+      const ent = entries[0];
+      console.log(ent.intersectionRatio);
+      if (ent.intersectionRatio > 0.89) {
+        document.body.classList.add("sticky");
+      }
+      if (ent.intersectionRatio <= 0.88) {
+        document.body.classList.remove("sticky");
+      }
+    },
+    {
+      root: null,
+      threshold: [0, 0.88, 0.9, 0.91],
+      rootMargin: "0px",
     }
-  },
-  {
-    root: null,
-    threshold: 0,
-    rootMargin: "-100px",
-  }
-);
-obs.observe(sectionHeroEl);
+  );
+  obs.observe(sectionHeroEl);
+}
 
 // const obs = new IntersectionObserver(
 //   function (entries) {
@@ -649,5 +695,3 @@ var bubblyButtons = document.getElementsByClassName("bubbly-button");
 for (var i = 0; i < bubblyButtons.length; i++) {
   bubblyButtons[i].addEventListener("click", animateButton, false);
 }
-
-// -----------------卡片-------------------------
