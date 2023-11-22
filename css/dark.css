@@ -180,14 +180,14 @@ iframe {
   position: absolute;
   top: 0;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1440px;
   height: 100%;
   background: linear-gradient(
     90deg,
-    #000000 0%,
+    rgba(0, 0, 0, 0.5) 0%,
     #ffffff00 30%,
     #ffffff00 70%,
-    #000000 100%
+    rgba(0, 0, 0, 0.5) 100%
   );
   pointer-events: none;
 }

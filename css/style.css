@@ -11,6 +11,11 @@ canvas {
   display: none;
   position: absolute;
   z-index: -1;
+  overflow-y: auto;
+}
+
+main {
+  overflow-y: auto;
 }
 
 /* ************************ */
@@ -28,6 +33,9 @@ canvas {
   margin: 0;
   padding: 0;
 }
+.header-test {
+  height: 1px;
+}
 
 * {
   padding: 0;
@@ -40,9 +48,9 @@ html {
   /* 10px / 16px = 0.625 = 62.5% */
   /* Percentage of user's browser font-size setting */
   font-size: 62.5%;
+  overflow-y: auto;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  overflow: scroll;
 }
 
 p {
@@ -62,6 +70,7 @@ body {
   font-weight: 400;
   letter-spacing: 2.6px;
   color: #555;
+  overflow-y: auto;
   overflow-x: hidden;
 
   --bgColor: #fff;
@@ -75,7 +84,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
-  overflow: scroll;
 }
 
 .container {
@@ -555,12 +563,16 @@ body {
   background-color: #fff;
 }
 
+main {
+  overflow: auto;
+}
 /* ************************* */
 /* Introduction  */
 /* ************************* */
 .section-introduction {
   padding: 9.6rem 0;
   background-color: rgba(0, 0, 0, 0.3);
+  overflow: auto;
   /* color: #fff; */
 }
 
@@ -626,25 +638,21 @@ body {
   width: 100%;
   height: 100%;
   z-index: -1; /* Ensure the background is behind the content */
+  -webkit-mask: url("../img/mask-6.png") no-repeat center center;
+  mask: url("../img/mask-6.png") no-repeat center center;
+  -webkit-mask-size: cover;
+  mask-size: cover;
 }
-
-/* .background-image {
-  background-image: url("../img/mental_hospital-3.jpg");
-  background-size: cover;
-  background-position: left;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1; /* Ensure the background is behind the content */
 
 .background-image-2 {
   background-image: url("../img/mental_hospital-1.jpg");
   background-size: 80%;
   background-attachment: fixed;
   background-position: 0% 50%;
+  -webkit-mask: url("../img/mask-2.png") no-repeat center center;
+  mask: url("../img/mask-7.png") no-repeat center center;
+  -webkit-mask-size: cover;
+  mask-size: cover;
 }
 
 .parallax-content {
@@ -698,8 +706,8 @@ body {
   color: #000;
   background: #ffc;
   display: block;
-  width: 18rem;
-  height: 18rem;
+  width: 23rem;
+  height: 23rem;
   padding: 1rem;
   box-shadow: 4px 4px 7px rgba(33, 33, 33, 0.5);
   transition: transform 0.15s linear;
@@ -707,13 +715,16 @@ body {
 }
 
 .sticky-notes .sticky-note a h2 {
+  font-family: "Noto Serif TC", serif;
+  font-weight: 700;
+  line-height: 1.05;
   font-size: 1.8rem;
   font-weight: bold;
   padding: 10px;
 }
 .sticky-notes .sticky-note p {
   font-size: 1.4rem;
-  padding: 10px;
+  padding: 0;
 }
 
 .sticky-notes .sticky-note a {

@@ -4,6 +4,11 @@ console.log("HOLLO");
 
 // 等待整個 HTML 文檔的加載完成後執行
 document.addEventListener("DOMContentLoaded", function () {
+  var scrollTop =
+    window.pageYOffset || //用于FF
+    document.documentElement.scrollTop ||
+    document.body.scrollTop ||
+    0;
   // 選擇具有 ".background-image" 類的元素，這是背景圖片的容器
   let background = document.querySelector(".background-image");
 
@@ -11,17 +16,21 @@ document.addEventListener("DOMContentLoaded", function () {
   let content = document.querySelector(".parallax-content");
 
   // 監聽滾動事件
-  document.addEventListener("scroll", function () {
-    // 獲取垂直滾動的距離
-    let scrollPosition = window.scrollY;
-    console.log("scrollPosition", scrollPosition);
+  window.addEventListener(
+    "scroll",
+    function () {
+      // 獲取垂直滾動的距離
+      let scrollPosition = window.scrollY;
+      console.log("scrollPosition", scrollPosition);
 
-    // 通過調整背景容器的 transform 屬性，創建視差效果（0.5 是一個調整的乘數）
-    background.style.transform = "translateY(" + scrollPosition * 0.5 + "px)";
+      // 通過調整背景容器的 transform 屬性，創建視差效果（0.5 是一個調整的乘數）
+      background.style.transform = "translateY(" + scrollPosition * 0.5 + "px)";
 
-    // 通過調整內容容器的 transform 屬性，創建更大的視差效果（0.8 是一個調整的乘數）
-    content.style.transform = "translateY(" + scrollPosition * 0.8 + "px)";
-  });
+      // 通過調整內容容器的 transform 屬性，創建更大的視差效果（0.8 是一個調整的乘數）
+      content.style.transform = "translateY(" + scrollPosition * 0.8 + "px)";
+    },
+    true
+  );
 });
 
 //////////////////////////////////////////////////////////
@@ -184,22 +193,22 @@ if ($(window).width() > 450) {
   );
   obs.observe(sectionHeroEl);
 } else if ($(window).width() < 450) {
-  const sectionHeroEl = document.querySelector(".section-hero");
+  const sectionHeroEl = document.querySelector(".header-test");
   const obs = new IntersectionObserver(
     function (entries) {
       const ent = entries[0];
       console.log(ent.intersectionRatio);
-      if (ent.intersectionRatio > 0.89) {
+      if (ent.isIntersecting === false) {
         document.body.classList.add("sticky");
       }
-      if (ent.intersectionRatio <= 0.88) {
+      if (ent.isIntersecting === true) {
         document.body.classList.remove("sticky");
       }
     },
     {
       root: null,
       threshold: [0, 0.88, 0.9, 0.91],
-      rootMargin: "0px",
+      rootMargin: "-1px",
     }
   );
   obs.observe(sectionHeroEl);
