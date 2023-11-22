@@ -617,7 +617,7 @@ body {
 .background-image {
   background-image: url("../img/girl.jpg");
   background-size: 80%;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
   background-position: 105% 25%;
   background-repeat: no-repeat;
   position: absolute;
@@ -636,14 +636,14 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;  
+  width: 100%;
   height: 100%;
   z-index: -1; /* Ensure the background is behind the content */
 
 .background-image-2 {
   background-image: url("../img/mental_hospital-1.jpg");
   background-size: 80%;
-  /* background-attachment: fixed; */
+  background-attachment: fixed;
   background-position: 0% 50%;
 }
 
