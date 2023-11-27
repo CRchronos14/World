@@ -185,4 +185,44 @@
   .card {
     width: 440px;
   }
+
+  .item-content {
+    padding: 2rem;
+    padding-right: 6rem;
+  }
+
+  .cards-wrapper::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    max-width: 1200px;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(256, 256, 256, 0.3) 0%,
+      #ffffff00 30%,
+      #ffffff00 70%,
+      rgba(256, 256, 256, 0.3) 100%
+    );
+    pointer-events: none;
+  }
+
+  .des-works {
+    gap: 1rem;
+  }
+
+  .des-work {
+    font-size: 1.2rem;
+  }
+
+  .des-work :first-child {
+    padding-top: 1.2rem;
+  }
+
+  /* about */
+  .about-text-box {
+    padding: 0;
+  }
 }

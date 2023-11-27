@@ -2,36 +2,36 @@ console.log("HOLLO");
 
 // -----------------視差滾動-------------------------
 
-// 等待整個 HTML 文檔的加載完成後執行
-document.addEventListener("DOMContentLoaded", function () {
-  var scrollTop =
-    window.pageYOffset || //用于FF
-    document.documentElement.scrollTop ||
-    document.body.scrollTop ||
-    0;
-  // 選擇具有 ".background-image" 類的元素，這是背景圖片的容器
-  let background = document.querySelector(".background-image");
+// // 等待整個 HTML 文檔的加載完成後執行
+// window.addEventListener("DOMContentLoaded", function () {
+//   var scrollTop =
+//     window.scrollY || //用于FF
+//     document.documentElement.scrollTop ||
+//     document.body.scrollTop ||
+//     0;
+//   // 選擇具有 ".background-image" 類的元素，這是背景圖片的容器
+//   let background = document.querySelector(".background-image");
 
-  // 選擇具有 ".parallax-content" 類的元素，這是包含視差效果內容的容器
-  let content = document.querySelector(".parallax-content");
+//   // 選擇具有 ".parallax-content" 類的元素，這是包含視差效果內容的容器
+//   let content = document.querySelector(".parallax-content");
 
-  // 監聽滾動事件
-  window.addEventListener(
-    "scroll",
-    function () {
-      // 獲取垂直滾動的距離
-      let scrollPosition = window.scrollY;
-      console.log("scrollPosition", scrollPosition);
+//   // 監聽滾動事件
+//   this.window.addEventListener(
+//     "scroll",
+//     function () {
+//       // 獲取垂直滾動的距離
+//       let scrollPosition = scrollTop;
+//       console.log("scrollPosition", scrollPosition);
 
-      // 通過調整背景容器的 transform 屬性，創建視差效果（0.5 是一個調整的乘數）
-      background.style.transform = "translateY(" + scrollPosition * 0.5 + "px)";
+//       // 通過調整背景容器的 transform 屬性，創建視差效果（0.5 是一個調整的乘數）
+//       background.style.transform = "translateY(" + scrollPosition * 0.5 + "px)";
 
-      // 通過調整內容容器的 transform 屬性，創建更大的視差效果（0.8 是一個調整的乘數）
-      content.style.transform = "translateY(" + scrollPosition * 0.8 + "px)";
-    },
-    true
-  );
-});
+//       // 通過調整內容容器的 transform 屬性，創建更大的視差效果（0.8 是一個調整的乘數）
+//       content.style.transform = "translateY(" + scrollPosition * 0.8 + "px)";
+//     },
+//     true
+//   );
+// });
 
 //////////////////////////////////////////////////////////
 // Make mobile navigation work
