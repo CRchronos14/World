@@ -772,6 +772,8 @@ main {
 }
 
 .item {
+  background-color: rgba(256, 256, 256, 0.3);
+  backdrop-filter: blur(10px) saturate(180%);
   backdrop-filter: blur(10px);
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
   border-radius: 11px;
@@ -804,14 +806,18 @@ main {
   font-size: 2rem;
   color: #402a52;
   font-weight: 500;
-  margin-bottom: 3.2rem;
 }
 
 .des-works {
+  color: #000;
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.des-works:last-child {
+  padding: 2.4rem;
 }
 
 .des-work {
@@ -819,6 +825,14 @@ main {
   display: flex;
   align-items: center;
   gap: 1.2rem;
+}
+
+.des-work-3 {
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  color: #000;
 }
 
 .des-img {
@@ -836,11 +850,63 @@ main {
 }
 
 .list-item {
-  font-size: 1.8rem;
+  color: #000;
   display: flex;
   align-items: center;
   gap: 1.6rem;
+  font-family: Noto Serif TC;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 250;
+  line-height: normal;
 }
+
+.section-join {
+  background-color: #fff;
+}
+
+.join-grid {
+  display: flex;
+  padding: 4.8rem 0;
+}
+
+.join-grid:nth-child(2) {
+  margin-left: 50%;
+  /* align-self: self-end; */
+}
+
+.join-right {
+  float: right;
+}
+
+.join-en {
+  color: #000;
+  font-family: Noto Serif TC;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 2rem;
+}
+
+.join-zh-1 {
+  color: #000;
+  font-family: Noto Serif TC;
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.join-zh-2 {
+  color: #000;
+  font-family: Noto Serif TC;
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 250;
+  line-height: normal;
+}
+
 /* ************************* */
 /* Connection  */
 /* ************************* */
@@ -881,6 +947,10 @@ main {
 .social-text {
   font-size: 1.6rem;
   letter-spacing: 5px;
+}
+
+.heading-secondary-dark {
+  color: #402a52;
 }
 
 /**************** 特殊字體效果 ***************/

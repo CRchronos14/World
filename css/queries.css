@@ -171,6 +171,10 @@
   }
 
   /* 卡片 */
+
+  .card-title {
+    font-size: 3.2rem;
+  }
   .cards {
     position: absolute;
     top: 15px;
@@ -224,5 +228,45 @@
   /* about */
   .about-text-box {
     padding: 0;
+  }
+
+  .item-content-2 {
+    padding-right: 2rem;
+  }
+
+  .list-item {
+    font-size: 1.4rem;
+  }
+
+  .join-zh-1 {
+    font-size: 2.4rem;
+  }
+
+  .join-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .join-right {
+    float: left;
+  }
+
+  .join-grid:nth-child(2) {
+    margin-left: 0;
+    /* align-self: self-end; */
+  }
+}
+
+@media (max-width: 24em) {
+  .card-title {
+    font-size: 2.4rem;
+  }
+  .item-content {
+    padding: 2rem;
+    padding-right: 10rem;
+  }
+
+  .item-content-2 {
+    padding-right: 2rem;
   }
 }

@@ -24,7 +24,7 @@ arrowBtns.forEach((btn, i) => {
       currentCard = Math.max(0, currentCard);
     } else {
       currentCard++;
-      currentCard = Math.min(4, currentCard);
+      currentCard = Math.min(3, currentCard);
     }
     moveCards(0.75);
   };
@@ -68,8 +68,8 @@ function moveCards(dur = 0) {
       {
         x: () => {
           return $(window).width() < 450
-            ? -540 * currentCard
-            : -810 * currentCard;
+            ? -720 * currentCard
+            : -1080 * currentCard;
         },
         y: (i) => (i == currentCard ? 0 : 15),
         height: (i) => (i == currentCard ? 540 : 480),
@@ -84,7 +84,7 @@ function moveCards(dur = 0) {
         "box-shadow": (i) =>
           i == currentCard ? "0 6px 11px #00000030" : "0 0px 0px #00000030",
         border: (i) =>
-          i == currentCard ? "2px solid #daa520" : "0px solid #fff",
+          i == currentCard ? "2px solid #D9A8E5" : "0px solid #fff",
         background: (i) =>
           i == currentCard
             ? "radial-gradient(100% 100% at top, #fff 0%, #fff 99%)"
@@ -113,7 +113,7 @@ function moveCards(dur = 0) {
     .to(
       ".arrow-btn-next",
       {
-        autoAlpha: currentCard == 4 ? 0 : 1,
+        autoAlpha: currentCard == 3 ? 0 : 1,
       },
       0
     )

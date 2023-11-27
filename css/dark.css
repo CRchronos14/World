@@ -174,6 +174,14 @@ iframe {
   background-color: transparent;
 }
 
+.des-title {
+  color: #e7c0e7;
+}
+
+.des-work-3 {
+  color: #fff;
+}
+
 .cards-wrapper::after {
   content: "";
   display: block;
@@ -190,4 +198,30 @@ iframe {
     rgba(0, 0, 0, 0.5) 100%
   );
   pointer-events: none;
+}
+
+.section-join {
+  background-color: transparent;
+}
+
+.list-item {
+  color: #fff;
+}
+
+.join-en,
+.join-zh-1,
+.join-zh-2 {
+  color: #fff;
+}
+
+.section-connection {
+  background-color: transparent;
+}
+
+.social-logo {
+  color: #e7c0e7;
+}
+
+.heading-secondary-dark {
+  color: #fff;
 }
