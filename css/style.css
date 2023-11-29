@@ -414,32 +414,42 @@ body {
   align-items: center;
   justify-content: center;
   justify-content: space-evenly;
-  margin-bottom: 9.6rem;
+  padding-bottom: 9.6rem;
 }
 
 .btn:link,
 .btn:visited {
   display: inline;
-  background-color: #402a52;
+  border: 0px solid transparent;
+  background-color: #f8d8ff;
+  background-image: linear-gradient(180deg, #e1c9e6 0%, #cfc4ee 74%);
   color: #fff;
   font-size: 2rem;
   padding: 1.6rem 3.2rem;
   border-radius: 15px;
   text-decoration: none;
   margin: 0 3rem;
-  transition: all 0.5s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+    inset 0 -1px 3px 1px rgba(255, 255, 255, 0.669);
+  transition: all 0.5s ease 0.1s;
 }
 
 .btn:hover,
 .btn:active {
   display: inline;
-  background-color: #daadff;
-  color: #fff;
+  background-color: #ffffff;
+  background-image: linear-gradient(180deg, #ededed 0%, #ffffff 20%);
+  border: 2px ridge #5f15cf;
+  color: #5f15cf;
   font-size: 2rem;
   padding: 1.6rem 3.2rem;
   border-radius: 15px;
   text-decoration: none;
   margin: 0 3rem;
+  transition: all 0.5s ease;
+  box-shadow: inset 7px 9px 8px rgba(0, 0, 0, 0.1),
+    inset 0px 0px 3px 0px rgba(255, 255, 255, 0.669),
+    outset 4px 6px 11px rgba(0, 0, 0, 0.1);
 }
 
 .delivered-text {
@@ -575,10 +585,10 @@ main {
   background-color: rgba(0, 0, 0, 0.3);
   overflow: auto;
   /* color: #fff; */
+  position: relative;
 }
 
 .step-img-box {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -589,18 +599,15 @@ main {
   width: 90%;
 }
 
-.Taisho .Taisho2 {
-  display: none;
-}
-
-.Taisho:active .Taisho2,
-.Taisho:focus .Taisho2 {
-  display: block;
-}
-
-.Taisho:active .Taisho1,
-.Taisho:focus .Taisho1 {
-  display: none;
+.step-img-2 {
+  overflow: visible;
+  float: left;
+  width: 100%;
+  -moz-transform: rotate(5deg);
+  -webkit-transform: rotate(5deg);
+  -o-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  transform: rotate(5deg);
 }
 
 .sub-content {
@@ -623,15 +630,17 @@ main {
 
 .parallax-container {
   position: relative;
-  height: 100vh;
-  overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 .background-image {
   background-image: url("../img/girl.jpg");
-  background-size: 80%;
+  -webkit-filter: invert(1);
+  filter: invert(1);
+  background-size: 35%;
   background-attachment: fixed;
-  background-position: 105% 25%;
+  background-position: 100% 60%;
   background-repeat: no-repeat;
   position: absolute;
   top: 0;
@@ -646,7 +655,7 @@ main {
 }
 
 .background-image-2 {
-  background-image: url("../img/mental_hospital-1.jpg");
+  background-image: url("../img/mental_0.jpg");
   background-size: 80%;
   background-attachment: fixed;
   background-position: 0% 50%;
