@@ -125,6 +125,7 @@ iframe {
 .btn:link,
 .btn:visited {
   background-color: transparent;
+  background-image: linear-gradient(180deg, #e1c9e600 0%, #cfc4ee00);
   border-color: #c1beff;
   border-style: solid;
   color: #fff;
@@ -134,6 +135,7 @@ iframe {
 .btn:hover,
 .btn:active {
   background-color: transparent;
+  background-image: linear-gradient(180deg, #e1c9e600 0%, #cfc4ee00);
   border-color: #f4e7ff;
   border-style: solid;
   color: #fff;
@@ -224,4 +226,29 @@ iframe {
 
 .heading-secondary-dark {
   color: #fff;
+}
+
+/*深色便利貼*/
+.sticky-notes .sticky-note a {
+  color: #212121;
+  background: rgba(240, 240, 240);
+  backdrop-filter: blur(5px);
+}
+
+.sticky-notes .sticky-note:nth-child(even) a {
+  color: #212121;
+  background: rgba(240, 240, 240);
+  backdrop-filter: blur(5px);
+}
+
+.sticky-notes .sticky-note:nth-child(3n) a {
+  color: #212121;
+  background: rgba(240, 240, 240);
+  backdrop-filter: blur(5px);
+}
+
+.sticky-notes .sticky-note p {
+  color: #212121;
+  font-size: 1.4rem;
+  padding: 0;
 }

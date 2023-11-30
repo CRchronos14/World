@@ -55,6 +55,7 @@ html {
 
 p {
   color: var(--fontColor);
+  font-family: Noto Serif TC;
 }
 
 @font-face {
@@ -139,9 +140,10 @@ body {
 }
 
 .subheading {
+  font-family: "Noto Serif TC", serif;
   display: block;
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 700;
   color: #cacaca;
   letter-spacing: 0.5rem;
   margin-bottom: 1.6rem;
@@ -166,9 +168,10 @@ body {
 }
 
 .subheading-1 {
+  font-family: "Noto Serif TC", serif;
   display: block;
   font-size: 2rem;
-  font-weight: 500;
+  font-weight: 700;
   color: #ffffff;
   letter-spacing: 0.5rem;
   margin-bottom: 1.2rem;
@@ -423,6 +426,7 @@ body {
   border: 0px solid transparent;
   background-color: #f8d8ff;
   background-image: linear-gradient(180deg, #e1c9e6 0%, #cfc4ee 74%);
+  font-family: Noto Serif TC;
   color: #fff;
   font-size: 2rem;
   padding: 1.6rem 3.2rem;
@@ -471,6 +475,7 @@ body {
 .about-text-box {
   padding: 0 4.8rem 4.8rem 4.8rem;
   font-size: 1.8rem;
+  line-height: 4.8rem;
 }
 
 /* 圓 */
@@ -624,6 +629,7 @@ main {
 .subtitle {
   font-size: 2.4rem;
   margin-bottom: 3.6rem;
+  font-weight: 700;
 }
 
 /* 副本視差滾動 */
@@ -732,6 +738,15 @@ main {
   font-weight: bold;
   padding: 10px;
 }
+
+.sticky-notes .sticky-note a h3 {
+  font-size: 1.4rem;
+  font-family: "Noto Serif TC", serif;
+  line-height: 1.8rem;
+  font-weight: 600;
+  padding: 0;
+}
+
 .sticky-notes .sticky-note p {
   font-size: 1.4rem;
   padding: 0;
@@ -775,7 +790,7 @@ main {
 .item-subheading {
   display: block;
   font-size: 1.6rem;
-  font-weight: 500;
+  font-weight: 700;
   color: #cacaca;
   letter-spacing: 0.5rem;
 }

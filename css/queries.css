@@ -170,6 +170,12 @@
     float: right;
   }
 
+  /* 副本介紹圖文順序 */
+
+  .parallax-container:nth-child(2) {
+    grid-row: 1;
+  }
+
   /* 卡片 */
 
   .card-title {
@@ -268,5 +274,19 @@
 
   .item-content-2 {
     padding-right: 2rem;
+  }
+}
+
+@media (max-width: 22em) {
+  .card-title {
+    font-size: 2rem;
+  }
+  .item-content {
+    padding: 2rem;
+    padding-right: 14rem;
+  }
+
+  .item-content-2 {
+    padding-right: 1rem;
   }
 }
