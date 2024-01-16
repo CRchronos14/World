@@ -470,18 +470,33 @@ body {
 .section-about {
   padding: 9.6rem 0;
   background-color: #fff;
+  transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
 }
 
 .about-text-box {
   padding: 0 4.8rem 4.8rem 4.8rem;
   font-size: 1.8rem;
   line-height: 4.8rem;
+  color: transparent;
 }
 
-.about-text-box {
-  padding: 0 4.8rem 4.8rem 4.8rem;
-  font-size: 1.8rem;
-  line-height: 4.8rem;
+.anim {
+  animation: show1 0.75s ease-out 1s forwards;
+  /* color: #000; */
+}
+
+@keyframes show1 {
+  0% {
+    filter: blur(4px);
+    transform: translateY(calc(20% + 75px));
+    color: transparent;
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    color: #000;
+  }
 }
 
 .about-title {

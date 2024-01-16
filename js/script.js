@@ -2,7 +2,7 @@ console.log("HOLLO");
 
 // -----------------視差滾動-------------------------
 
-// // 等待整個 HTML 文檔的加載完成後執行
+// 等待整個 HTML 文檔的加載完成後執行
 // window.addEventListener("DOMContentLoaded", function () {
 //   var scrollTop =
 //     window.scrollY || //用于FF
@@ -42,6 +42,8 @@ const headerEl = document.querySelector(".header");
 btnNavEl.addEventListener("click", function () {
   headerEl.classList.toggle("nav-open");
 });
+
+// ///////////////////////
 
 ///////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
@@ -214,6 +216,65 @@ if ($(window).width() > 450) {
   obs.observe(sectionHeroEl);
 }
 
+const sectionConEl = document.querySelector(".section-content");
+const obs1 = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+    console.log(ent);
+    if (ent.isIntersecting === false) {
+      // document.getElementById("ani").classList.remove("anim");
+    }
+    if (ent.isIntersecting === true) {
+      document.getElementById("ani").classList.add("anim");
+    }
+  },
+  {
+    root: null,
+    threshold: 0,
+    rootMargin: "-45px",
+  }
+);
+obs1.observe(sectionConEl);
+
+const sectioNani1El = document.querySelector(".ani1");
+const obs2 = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+    console.log(ent);
+    if (ent.isIntersecting === false) {
+      // document.getElementById("ani-1").classList.remove("anim");
+    }
+    if (ent.isIntersecting === true) {
+      document.getElementById("ani-1").classList.add("anim");
+    }
+  },
+  {
+    root: null,
+    threshold: 0,
+    rootMargin: "-250px",
+  }
+);
+obs2.observe(sectioNani1El);
+
+const sectioNani2El = document.querySelector(".ani2");
+const obs3 = new IntersectionObserver(
+  function (entries) {
+    const ent = entries[0];
+    console.log(ent);
+    if (ent.isIntersecting === false) {
+      // document.getElementById("ani-1").classList.remove("anim");
+    }
+    if (ent.isIntersecting === true) {
+      document.getElementById("ani-2").classList.add("anim");
+    }
+  },
+  {
+    root: null,
+    threshold: 0,
+    rootMargin: "-150px",
+  }
+);
+obs3.observe(sectioNani2El);
 
 var PARTICLE_NUM = 500;
 var PARTICLE_BASE_RADIUS = 0.5;
@@ -681,9 +742,6 @@ var bubblyButtons = document.getElementsByClassName("bubbly-button");
 for (var i = 0; i < bubblyButtons.length; i++) {
   bubblyButtons[i].addEventListener("click", animateButton, false);
 }
-
-
-
 
 const slider4 = document.querySelector(".slider-4");
 
