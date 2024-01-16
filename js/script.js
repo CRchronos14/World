@@ -251,7 +251,7 @@ const obs2 = new IntersectionObserver(
   {
     root: null,
     threshold: 0,
-    rootMargin: "-250px",
+    rootMargin: "-200px",
   }
 );
 obs2.observe(sectioNani1El);
