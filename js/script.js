@@ -194,6 +194,68 @@ if ($(window).width() > 450) {
     }
   );
   obs.observe(sectionHeroEl);
+
+  // 字 顯示
+
+  const sectionConEl = document.querySelector(".section-content");
+  const obs1 = new IntersectionObserver(
+    function (entries) {
+      const ent = entries[0];
+      console.log(ent);
+      if (ent.isIntersecting === false) {
+        // document.getElementById("ani").classList.remove("anim");
+      }
+      if (ent.isIntersecting === true) {
+        document.getElementById("ani").classList.add("anim");
+      }
+    },
+    {
+      root: null,
+      threshold: 0,
+      rootMargin: "-45px",
+    }
+  );
+  obs1.observe(sectionConEl);
+
+  const sectioNani1El = document.querySelector(".ani1");
+  const obs2 = new IntersectionObserver(
+    function (entries) {
+      const ent = entries[0];
+      console.log(ent);
+      if (ent.isIntersecting === false) {
+        // document.getElementById("ani-1").classList.remove("anim");
+      }
+      if (ent.isIntersecting === true) {
+        document.getElementById("ani-1").classList.add("anim");
+      }
+    },
+    {
+      root: null,
+      threshold: 0,
+      rootMargin: "-200px",
+    }
+  );
+  obs2.observe(sectioNani1El);
+
+  const sectioNani2El = document.querySelector(".ani2");
+  const obs3 = new IntersectionObserver(
+    function (entries) {
+      const ent = entries[0];
+      console.log(ent);
+      if (ent.isIntersecting === false) {
+        // document.getElementById("ani-1").classList.remove("anim");
+      }
+      if (ent.isIntersecting === true) {
+        document.getElementById("ani-2").classList.add("anim");
+      }
+    },
+    {
+      root: null,
+      threshold: 0,
+      rootMargin: "-150px",
+    }
+  );
+  obs3.observe(sectioNani2El);
 } else if ($(window).width() < 450) {
   const sectionHeroEl = document.querySelector(".header-test");
   const obs = new IntersectionObserver(
@@ -214,67 +276,67 @@ if ($(window).width() > 450) {
     }
   );
   obs.observe(sectionHeroEl);
+
+  const sectionConEl = document.querySelector(".section-content");
+  const obs1 = new IntersectionObserver(
+    function (entries) {
+      const ent = entries[0];
+      console.log(ent);
+      if (ent.isIntersecting === false) {
+        // document.getElementById("ani").classList.remove("anim");
+      }
+      if (ent.isIntersecting === true) {
+        document.getElementById("ani").classList.add("anim");
+      }
+    },
+    {
+      root: null,
+      threshold: 0,
+      rootMargin: "-45px",
+    }
+  );
+  obs1.observe(sectionConEl);
+
+  const sectioNani1El = document.querySelector(".ani1");
+  const obs2 = new IntersectionObserver(
+    function (entries) {
+      const ent = entries[0];
+      console.log(ent);
+      if (ent.isIntersecting === false) {
+        // document.getElementById("ani-1").classList.remove("anim");
+      }
+      if (ent.isIntersecting === true) {
+        document.getElementById("ani-1").classList.add("anim");
+      }
+    },
+    {
+      root: null,
+      threshold: 0,
+      rootMargin: "0px",
+    }
+  );
+  obs2.observe(sectioNani1El);
+
+  const sectioNani2El = document.querySelector(".ani2");
+  const obs3 = new IntersectionObserver(
+    function (entries) {
+      const ent = entries[0];
+      console.log(ent);
+      if (ent.isIntersecting === false) {
+        // document.getElementById("ani-1").classList.remove("anim");
+      }
+      if (ent.isIntersecting === true) {
+        document.getElementById("ani-2").classList.add("anim");
+      }
+    },
+    {
+      root: null,
+      threshold: 0,
+      rootMargin: "-45px",
+    }
+  );
+  obs3.observe(sectioNani2El);
 }
-
-const sectionConEl = document.querySelector(".section-content");
-const obs1 = new IntersectionObserver(
-  function (entries) {
-    const ent = entries[0];
-    console.log(ent);
-    if (ent.isIntersecting === false) {
-      // document.getElementById("ani").classList.remove("anim");
-    }
-    if (ent.isIntersecting === true) {
-      document.getElementById("ani").classList.add("anim");
-    }
-  },
-  {
-    root: null,
-    threshold: 0,
-    rootMargin: "-45px",
-  }
-);
-obs1.observe(sectionConEl);
-
-const sectioNani1El = document.querySelector(".ani1");
-const obs2 = new IntersectionObserver(
-  function (entries) {
-    const ent = entries[0];
-    console.log(ent);
-    if (ent.isIntersecting === false) {
-      // document.getElementById("ani-1").classList.remove("anim");
-    }
-    if (ent.isIntersecting === true) {
-      document.getElementById("ani-1").classList.add("anim");
-    }
-  },
-  {
-    root: null,
-    threshold: 0,
-    rootMargin: "-200px",
-  }
-);
-obs2.observe(sectioNani1El);
-
-const sectioNani2El = document.querySelector(".ani2");
-const obs3 = new IntersectionObserver(
-  function (entries) {
-    const ent = entries[0];
-    console.log(ent);
-    if (ent.isIntersecting === false) {
-      // document.getElementById("ani-1").classList.remove("anim");
-    }
-    if (ent.isIntersecting === true) {
-      document.getElementById("ani-2").classList.add("anim");
-    }
-  },
-  {
-    root: null,
-    threshold: 0,
-    rootMargin: "-150px",
-  }
-);
-obs3.observe(sectioNani2El);
 
 var PARTICLE_NUM = 500;
 var PARTICLE_BASE_RADIUS = 0.5;
