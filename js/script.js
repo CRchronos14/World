@@ -214,29 +214,6 @@ if ($(window).width() > 450) {
   obs.observe(sectionHeroEl);
 }
 
-// const obs = new IntersectionObserver(
-//   function (entries) {
-//     const ent = entries[0];
-//     console.log(ent);
-
-// if (ent.isIntersecting === false) {
-//   document.body.classList.add("sticky");
-// }
-
-//     if (ent.isIntersecting === true) {
-//       document.body.classList.remove("sticky");
-//     }
-//   },
-//   {
-//     // In the viewport
-//     root: null,
-//     threshold: 0,
-//     rootMargin: "-80px",
-//   }
-// );
-// obs.observe(sectionHeroEl)
-
-// cool3d
 
 var PARTICLE_NUM = 500;
 var PARTICLE_BASE_RADIUS = 0.5;
@@ -704,3 +681,16 @@ var bubblyButtons = document.getElementsByClassName("bubbly-button");
 for (var i = 0; i < bubblyButtons.length; i++) {
   bubblyButtons[i].addEventListener("click", animateButton, false);
 }
+
+
+
+
+const slider4 = document.querySelector(".slider-4");
+
+function activate(e) {
+  const items = document.querySelectorAll(".item-work");
+  e.target.matches(".next-4") && slider4.append(items[0]);
+  e.target.matches(".prev-4") && slider4.prepend(items[items.length - 1]);
+}
+
+document.addEventListener("click", activate, false);

@@ -120,6 +120,11 @@ iframe {
   background-color: transparent;
 }
 
+.about-title {
+  font-size: 2.8rem;
+  background-color: transparent;
+}
+
 /* coolbtu */
 
 .btn:link,
