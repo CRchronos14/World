@@ -198,7 +198,6 @@
 
   .item-content {
     padding: 2rem;
-    padding-right: 6rem;
   }
 
   .cards-wrapper::after {
@@ -261,32 +260,25 @@
     margin-left: 0;
     /* align-self: self-end; */
   }
+
+  /* 副本 */
+  .subtitle {
+    font-size: 2rem;
+  }
+
+  .sentence {
+    font-size: 1.8rem;
+  }
 }
 
 @media (max-width: 24em) {
   .card-title {
     font-size: 2.4rem;
   }
-  .item-content {
-    padding: 2rem;
-    padding-right: 10rem;
-  }
-
-  .item-content-2 {
-    padding-right: 2rem;
-  }
 }
 
 @media (max-width: 22em) {
   .card-title {
     font-size: 2rem;
-  }
-  .item-content {
-    padding: 2rem;
-    padding-right: 14rem;
-  }
-
-  .item-content-2 {
-    padding-right: 1rem;
   }
 }

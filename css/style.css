@@ -1609,7 +1609,7 @@ body {
 }
 
 .content {
-  width: min(30vw, 400px);
+  width: min(35vw, 40rem);
   position: absolute;
   top: 50%;
   left: 3rem;
@@ -1623,12 +1623,14 @@ body {
   & .title {
     font-family: "arial-black";
     text-transform: uppercase;
+    font-size: 3.2rem;
   }
 
   & .description {
     line-height: 1.7;
     margin: 1rem 0 1.5rem;
-    font-size: 0.8rem;
+    font-size: 1.8rem;
+    color: #eee;
   }
 
   & button {
@@ -1664,7 +1666,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   z-index: 5;
-  user-select: none;
+  /* user-select: none; */
 
   & .btn-4 {
     background-color: rgba(255, 255, 255, 0.5);
@@ -1683,14 +1685,17 @@ body {
 
 @media (width > 650px) and (width < 900px) {
   .content {
+    width: min(35vw, 400px);
+  }
+  .content {
     & .title {
-      font-size: 1rem;
+      font-size: 3rem;
     }
     & .description {
-      font-size: 0.7rem;
+      font-size: 1.6rem;
     }
     & button {
-      font-size: 0.7rem;
+      font-size: 2.4rem;
     }
   }
   .item-work {
@@ -1716,13 +1721,13 @@ body {
 @media (width < 650px) {
   .content {
     & .title {
-      font-size: 0.9rem;
+      font-size: 2.2rem;
     }
     & .description {
-      font-size: 0.65rem;
+      font-size: 1.2rem;
     }
     & button {
-      font-size: 0.7rem;
+      font-size: 1.6rem;
     }
   }
   .item-work {
