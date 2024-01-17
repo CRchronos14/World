@@ -643,7 +643,7 @@ main {
 }
 
 .sub-content {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   letter-spacing: 0.2rem;
   margin: 0.5rem 0;
 }
@@ -1766,3 +1766,248 @@ body {
 }
 
 /* 144444444444444444444444444444444444444444444444444 */
+.box {
+  width: 40%;
+  height: 30px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+  display: block;
+}
+
+/*Button design in the menu*/
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #06d85f;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+  background: #06d85f;
+}
+
+/*Overlay effect: pop up window design*/
+.overlay1 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay1:target {
+  visibility: visible;
+  opacity: 1;
+}
+.popup1 {
+  margin: 70px auto;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+  width: 80%;
+  position: absolute;
+  top: 50px;
+  left: 10%;
+  transition: all 5s ease-in-out;
+}
+
+/*Overlay effect: pop up window design*/
+.overlay2 {
+  position: fixed;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay2:target {
+  visibility: visible;
+  opacity: 1;
+}
+.popup2 {
+  margin: 70px auto;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+  width: 80%;
+  position: absolute;
+  top: 100px;
+  left: 10%;
+  transition: all 5s ease-in-out;
+}
+
+/*Overlay effect: pop up window design*/
+.overlay3 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay3:target {
+  visibility: visible;
+  opacity: 1;
+}
+.popup3 {
+  margin: 70px auto;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+  width: 80%;
+  position: absolute;
+  top: 150px;
+  left: 10%;
+  transition: all 5s ease-in-out;
+}
+
+/*Overlay effect: pop up window design*/
+.overlay4 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay4:target {
+  visibility: visible;
+  opacity: 1;
+}
+.popup4 {
+  margin: 70px auto;
+  padding: 10px;
+  background: #fff;
+  border-radius: 5px;
+  width: 80%;
+  position: absolute;
+  top: 200px;
+  left: 10%;
+  transition: all 5s ease-in-out;
+}
+
+/*close button in popup window*/
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.close:hover {
+  color: #06d85f;
+}
+.popup1 {
+  max-height: 30%;
+  overflow: auto;
+}
+
+/* responsive design*/
+@media screen and (max-width: 700px) {
+  .box {
+    width: 70%;
+  }
+  .popup {
+    width: 70%;
+  }
+}
+
+/* //////////////////// pop*/
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 5%;
+  left: 0;
+  right: 0;
+  margin: 0 auto 0 auto;
+  background: white;
+  max-width: 500px;
+  padding: 40px;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 4;
+}
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+*:focus {
+  outline: 2px solid #1160fb;
+  outline-offset: 2px;
+}
+
+.modal ul {
+  margin: 25px 0 35px 0;
+}
+
+.modal li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+/* button {
+  background: #1160fb;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+} */
+
+.container button {
+  display: block;
+  padding: 15px 35px;
+  margin: 35px auto 0 auto;
+  font-size: 140%;
+}
+
+.button-cancel {
+  background-color: grey;
+}
+
+.modal {
+  opacity: 1;
+  transform: translateY(30%);
+  transition: all 0.3s;
+  z-index: 9;
+}
+.modal button:first-of-type {
+  margin-right: 10px;
+}
+
+.modal-closed {
+  opacity: 0;
+  transform: translateY(-15px);
+}

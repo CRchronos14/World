@@ -19,6 +19,74 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+    <script type="x-shader/x-fragment" id="fragmentShader">
+      varying vec2 vUv;
+      uniform float u_size;
+      uniform float u_ratio;
+      uniform float u_time;
+      uniform sampler2D u_texture;
+
+      float random (in vec2 st) {
+          return fract(sin(dot(st.xy, vec2(12.9898, 78.233)))*43758.5453123);
+      }
+      float noise (in vec2 st) {
+          vec2 i = floor(st);
+          vec2 f = fract(st);
+          float a = random(i);
+          float b = random(i + vec2(1.0, 0.0));
+          float c = random(i + vec2(0.0, 1.0));
+          float d = random(i + vec2(1.0, 1.0));
+          vec2 u = f * f * (3.0 - 2.0 * f);
+          return mix(a, b, u.x) + (c - a)* u.y * (1.0 - u.x) + (d - b) * u.x * u.y;
+      }
+      float fbm (in vec2 st) {
+          float value = 0.0;
+          float amplitude = .5;
+          float frequency = 0.;
+          for (int i = 0; i < 4; i++) {
+              value += amplitude * noise(st);
+              st *= 2.;
+              amplitude *= .5;
+          }
+          return value;
+      }
+
+
+      void main() {
+          vec2 uv = vUv;
+          uv.y /= u_ratio;
+
+          vec4 base = texture2D(u_texture, vUv);
+          float t = pow(3. * u_time, .9);
+
+          float edges_mask = max(.4, pow(length(vUv - vec2(.5)), .5));
+          float noise_mask = fbm(vec2(.01 * u_size * uv)) / edges_mask;
+          noise_mask -= .06 * length(base.rgb);
+
+          vec3 color = mix(base.rgb, vec3(0.), smoothstep(noise_mask - .15, noise_mask - .1, t));
+          vec3 fire_color = fbm(6. * vUv + .1 * t) * vec3(6., 1.4, .0);
+          color = mix(color, fire_color, smoothstep(noise_mask - .1, noise_mask - .05, t));
+          color -= .3 * fbm(3. * vUv) * pow(t, 4.);
+
+          float opacity = 1. - smoothstep(noise_mask - .01, noise_mask, t);
+
+          gl_FragColor = vec4(color, opacity);
+      }
+    </script>
+
+    <script type="x-shader/x-vertex" id="vertexShader">
+      varying vec2 vUv;
+      void main() {
+          vUv = uv;
+          gl_Position = vec4(position, 1.);
+      }
+    </script>
+    <!-- partial -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.153.0/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="./script.js"></script>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
@@ -322,7 +390,8 @@
             潔淨的私人空間，您不需要為吵雜苦惱。 <br />
             多樣的美食饗宴，您不需要為飢餓不快。 <br />
             生機的清翠花園，您不需要為呼吸發愁。 <br />
-            這裡是完美的，如果您產生了焦慮、不安、恐慌，請無視此種情緒。 <br />
+            這裡是完美的，如果您產生了焦慮、不安、恐慌，請無視此種情緒。
+            <br /><br />
             他們說這裡有「副本」，這是一個又一個沉浸式的故事。<br />
             ......。 <br />
             ......。 <br />......。 <br />現在還不急著談這個。 <br />
@@ -373,9 +442,9 @@
               </p>
               <p class="sub-content">
                 那不應該存在的！胃部的翻騰卻彰顯著最深處的恐懼，從未見過的生物卻嚎叫著。
-              </p>
-              <p class="sub-content">
                 接下來、接下來應該做什麼——為什麼不記得了？喉嚨深處的窒息感正在叫囂。
+                他遞出了一封信。<br />
+                你看見了他眼中的悲傷。<br /><br />
               </p>
             </div>
           </div>
@@ -393,21 +462,15 @@
 
               <p class="sentence">「以培養健全的淑女為目標。」</p>
               <p class="sub-content">背景設立於 1912 至 1926 日本大正年間。</p>
-              <p class="sub-content">
-                姊妹制度，勾起了靜坐在天秤兩端的兩名少女——蘆屋 菖蒲以及菅原
-                百合子。
-              </p>
-              <p class="sub-content">
-                <br />
-                您是否能夠想像纖細白皙的少女被強行侵犯時的痛苦。
-              </p>
+
               <p class="sub-content">——塵埃，少女與寧靜的書庫中。</p>
               <p class="sub-content">
                 內心隱瞞的情感、本能發顫的手腳、流溪牽動著心中的痛楚。
               </p>
               <p class="sub-content">——綻放的微笑，願它能持續守護你。</p>
               <p class="sub-content">
-                您是否能夠想像，被怨恨的蠹蟲啃食著的心。 因為「我」不會放過你。
+                您是否能夠想像，被怨恨的蠹蟲啃食著的心。<br />
+                因為「我」不會放過你。<br />
               </p>
             </div>
           </div>
@@ -447,10 +510,7 @@
               <button>Read More</button>
             </div>
           </li>
-          <li
-            class="item-work next-4"
-            style="background-image: url('https://i.redd.it/tc0aqpv92pn21.jpg')"
-          >
+          <li class="item-work next-4" style="background-color: black">
             <div class="content">
               <h2 class="title">組別介紹</h2>
               <p class="description">
@@ -460,9 +520,7 @@
           </li>
           <li
             class="item-work next-4"
-            style="
-              background-image: url('https://wharferj.files.wordpress.com/2015/11/bio_north.jpg');
-            "
+            style="background-image: url(img/sky-2.jpg)"
           >
             <div class="content">
               <h2 class="title">策畫</h2>
@@ -503,9 +561,10 @@
                 Tempore fuga voluptatum, iure corporis inventore praesentium
                 nisi. Id laboriosam ipsam enim.
               </p>
-              <button>Read More</button>
+              <button class="modal-toggle">Read More</button>
             </div>
           </li>
+
           <li
             class="item-work next-4"
             style="
@@ -523,6 +582,22 @@
             </div>
           </li>
         </ul>
+        <div class="modal modal-closed" aria-role="dialog">
+          <h1>開發組</h1>
+          <p>遊戲開發</p>
+          <p>
+            工作內容：協助開發企劃遊戲、和非技術人員討論需求並且實作且能夠獨自完成交辦的工作項目。
+          </p>
+          <ul>
+            <li><a>具有unity開發經驗</a></li>
+            <li><a>熟悉unity編輯器與Git 、C#</a></li>
+            <li><a>具有自學能力，能看懂各式資料</a></li>
+            <li><a>願意多溝通，能夠與他人合作，勇於表達意見、想法</a></li>
+          </ul>
+
+          <button class="modal-close">OK</button>
+        </div>
+        <div class="modal-overlay"></div>
         <nav class="nav-4">
           <ion-icon class="btn-4 prev-4" name="arrow-back-outline"></ion-icon>
           <ion-icon
