@@ -39,11 +39,11 @@ console.log("HOLLO");
 const btnNavEl = document.querySelector(".btn-mobile-nav");
 const headerEl = document.querySelector(".header");
 
-if (btnNavEl && headerEl) {
-  btnNavEl.addEventListener("click", function () {
-    headerEl.classList.toggle("nav-open");
-  });
-}
+// if (btnNavEl && headerEl) {
+//   btnNavEl.addEventListener("click", function () {
+//     headerEl.classList.toggle("nav-open");
+//   });
+// }
 
 btnNavEl.addEventListener("click", function () {
   headerEl.classList.toggle("nav-open");
