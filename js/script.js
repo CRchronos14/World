@@ -39,6 +39,12 @@ console.log("HOLLO");
 const btnNavEl = document.querySelector(".btn-mobile-nav");
 const headerEl = document.querySelector(".header");
 
+if (btnNavEl && headerEl) {
+  btnNavEl.addEventListener("click", function () {
+    headerEl.classList.toggle("nav-open");
+  });
+}
+
 btnNavEl.addEventListener("click", function () {
   headerEl.classList.toggle("nav-open");
 });
@@ -144,30 +150,26 @@ btnSwitchTheme.addEventListener("click", toggleTheme);
 
 ///////////////////////////////////////////////////////////
 // Smooth scrolling animation
-
 const allLinks = document.querySelectorAll("a:link");
 
 allLinks.forEach(function (link) {
   link.addEventListener("click", function (e) {
-    e.preventDefault();
     const href = link.getAttribute("href");
 
-    // Scroll back to top
-    if (href === "#")
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+    // Check if it's an internal link
+    if (href && href !== "#" && href.startsWith("#")) {
+      e.preventDefault(); // Prevent default only for internal links
 
-    // Scroll to other links
-    if (href !== "#" && href.startsWith("#")) {
       const sectionEl = document.querySelector(href);
-      sectionEl.scrollIntoView({ behavior: "smooth" });
+      if (sectionEl) {
+        sectionEl.scrollIntoView({ behavior: "smooth" });
+      }
     }
 
-    // Close mobile naviagtion
-    if (link.classList.contains("main-nav-link"))
+    // Close mobile navigation for specific links
+    if (link.classList.contains("main-nav-link")) {
       headerEl.classList.toggle("nav-open");
+    }
   });
 });
 
