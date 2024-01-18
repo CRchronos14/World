@@ -82,10 +82,9 @@
       }
     </script>
     <!-- partial -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.153.0/three.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
     <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
-    <script src="./script.js"></script>
 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -275,7 +274,7 @@
       </nav>
 
       <!-- 在介面縮小時的導航菜單按鈕設置 -->
-      <button class="btn-mobile-nav">
+      <button aria-label="Submit Form" class="btn-mobile-nav">
         <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
         <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
       </button>
@@ -477,7 +476,7 @@
         </div>
       </section>
 
-      <div class="container text-center">
+      <div class="container text-center" id="planning">
         <span class="subheading-1">ABOUT</span>
         <h2 class="heading-secondary-1">招募資訊</h2>
       </div>
@@ -494,12 +493,7 @@
       <!-- 1111111111111111111111111111111111111111111111111111 -->
       <section class="about-work">
         <ul class="slider-4">
-          <li
-            class="item-work next-4"
-            style="
-              background-image: url('https://cdn.mos.cms.futurecdn.net/dP3N4qnEZ4tCTCLq59iysd.jpg');
-            "
-          >
+          <li class="item-work next-4" style="background-color: black">
             <div class="content">
               <h2 class="title">宣傳組</h2>
               <p class="description">
@@ -510,7 +504,10 @@
               <button>Read More</button>
             </div>
           </li>
-          <li class="item-work next-4" style="background-color: black">
+          <li
+            class="item-work next-4"
+            style="background-color: rgb(255, 255, 255)"
+          >
             <div class="content">
               <h2 class="title">組別介紹</h2>
               <p class="description">
@@ -520,69 +517,67 @@
           </li>
           <li
             class="item-work next-4"
-            style="background-image: url(img/sky-2.jpg)"
+            style="background-image: url(img/tit-1.jpg)"
           >
             <div class="content">
               <h2 class="title">策畫</h2>
               <p class="description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Tempore fuga voluptatum, iure corporis inventore praesentium
-                nisi. Id laboriosam ipsam enim.
+                構想遊戲架構、世界觀等相關基礎設定。
+                規劃其關卡等架構並撰寫相關設定。 規劃遊戲宣傳相關。
               </p>
-              <button>Read More</button>
+              <button class="modal-toggle" data-modal-target="modal3">
+                Read More
+              </button>
             </div>
           </li>
           <li
             class="item-work next-4"
-            style="
-              background-image: url('https://images7.alphacoders.com/878/878663.jpg');
-            "
+            style="background-image: url(img/tit-2.jpg)"
           >
             <div class="content">
               <h2 class="title">美術</h2>
               <p class="description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Tempore fuga voluptatum, iure corporis inventore praesentium
-                nisi. Id laboriosam ipsam enim.
+                根據企劃組的提案，設計或繪出對應物件，含括插圖、背景、人物展示、角色外形及遊戲物件等。
               </p>
-              <button>Read More</button>
+              <button class="modal-toggle" data-modal-target="modal2">
+                Read More
+              </button>
             </div>
           </li>
           <li
             class="item-work next-4"
-            style="
-              background-image: url('https://theawesomer.com/photos/2017/07/simon_stalenhag_the_electric_state_6.jpg');
-            "
+            style="background-image: url(img/tit-3.jpg)"
           >
             <div class="content">
               <h2 class="title">開發</h2>
               <p class="description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Tempore fuga voluptatum, iure corporis inventore praesentium
-                nisi. Id laboriosam ipsam enim.
+                根據企劃組的提案，並利用美術與排版編輯組產出之相關物件，設計並製作對應之網頁排版、遊戲等，具體實現企劃內容，負責所有程式碼相關的業務，並確保遊戲流暢度。
               </p>
-              <button class="modal-toggle">Read More</button>
+              <button class="modal-toggle" data-modal-target="modal1">
+                Read More
+              </button>
             </div>
           </li>
 
           <li
             class="item-work next-4"
-            style="
-              background-image: url('https://da.se/app/uploads/2015/09/simon-december1994.jpg');
-            "
+            style="background-image: url(img/tit-4.jpg)"
           >
             <div class="content">
               <h2 class="title">音樂</h2>
               <p class="description">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Tempore fuga voluptatum, iure corporis inventore praesentium
-                nisi. Id laboriosam ipsam enim.
+                根據實際製出的遊戲、網頁等，為其搭配合理音效，含括遊戲配樂、音效等。
               </p>
-              <button>Read More</button>
+              <button class="modal-toggle" data-modal-target="modal4">
+                Read More
+              </button>
             </div>
           </li>
         </ul>
-        <div class="modal modal-closed" aria-role="dialog">
+
+        <!-- 開發組內容 -->
+
+        <div class="modal modal-closed" id="modal1" aria-role="dialog">
           <h1>開發組</h1>
           <p>遊戲開發</p>
           <p>
@@ -597,6 +592,134 @@
 
           <button class="modal-close">OK</button>
         </div>
+
+        <div class="modal modal-closed" id="modal2" aria-role="dialog">
+          <h1>美術組</h1>
+          <p>場景設計</p>
+          <p>
+            工作內容：依照初步場景內容設定，編排家具、動線等。
+            也包含家具裝潢繪製設計。
+          </p>
+
+          <p>CG圖繪製</p>
+          <p>
+            工作內容：根據劇情所需繪製需要特別演出的部分，能夠設計／繪製出大圖包含背景的人員。
+            前置設計人員： 屬於畫面設計，就是畫草稿訂方向。 完稿繪製人員：
+            屬於跟上述給的草稿跟所有統合意見做一個完稿的動作。
+          </p>
+
+          <p>人物像素</p>
+          <p>
+            工作內容：將遊戲中的人物轉換成4面/8面像素圖。 包含配飾、裝備等。
+          </p>
+
+          <p>場景像素</p>
+          <p>工作內容：將場景設計轉換成像素圖。 包含家具、裝潢等。</p>
+
+          <p>場景設計</p>
+          <p>
+            工作內容：依照初步場景內容設定，編排家具、動線等。
+            也包含家具裝潢繪製設計。
+          </p>
+
+          <button class="modal-close">OK</button>
+        </div>
+
+        <div class="modal modal-closed" id="modal3" aria-role="dialog">
+          <h1>策畫組</h1>
+          <h2>系統策畫</h2>
+          <p>工作內容：撰寫遊戲內系統所需細部功能，拆分系統工程。</p>
+          <ul>
+            <li><a>對各式RPG遊戲具有熱忱</a></li>
+            <li><a>了解RPG遊戲內各式遊戲系統與機制</a></li>
+            <li><a>願意多溝通，能夠與他人合作，勇於表達意見、想法</a></li>
+          </ul>
+
+          <p>關卡策畫</p>
+          <p>
+            工作內容：設定遊戲包括主、支線與副本之關卡架構、內容基礎設定。包含設定、大綱、遊玩方式、地圖等。
+          </p>
+          <ul>
+            <li><a>對各式RPG遊戲具有熱忱</a></li>
+            <li><a>願意多溝通，能夠與他人合作，勇於表達意見、想法</a></li>
+          </ul>
+
+          <p>數值策畫</p>
+          <p>工作內容：制訂遊戲中各項參數，維持遊戲平衡與體驗。</p>
+          <ul>
+            <li><a>對各式RPG遊戲具有熱忱</a></li>
+            <li><a>願意多溝通，能夠與他人合作，勇於表達意見、想法</a></li>
+          </ul>
+
+          <p>主線與草稿</p>
+          <p>
+            主線分成：<br />
+
+            系統故事：<br />
+            主人公在系統中的故事發想，為最主要故事，包含了劇情流程安排、對話選項、部分彩蛋安排。
+            副本：<br />
+            副本內皆為獨立故事，構想副本內主要故事、世界觀、人物角色、主軸核心等等
+          </p>
+          <ul>
+            <li><a>有玩過遊戲或是參與企劃的經驗，需要作品集或oc介紹</a></li>
+          </ul>
+
+          <p>世界觀細節設定</p>
+          <p>主要世界觀之架構與細則設定與世界觀整理、統整</p>
+          <ul>
+            <li><a>有玩過遊戲或是參與企劃的經驗，需要作品集或oc介紹</a></li>
+          </ul>
+
+          <p>文手</p>
+          <p>書寫所有文案、對話、選項、但不參與構想與討論。</p>
+          <ul>
+            <li><a>有玩過遊戲或是參與企劃的經驗，需要作品集或oc介紹</a></li>
+          </ul>
+
+          <p>評委</p>
+          <p>不參與任何構想與書寫，給予建議和抓出劇情上的問題。</p>
+          <ul>
+            <li>
+              <a>對於遊戲有評論、想法，需要較快的回覆速度及完善的表達能力</a>
+            </li>
+          </ul>
+
+          <button class="modal-close">OK</button>
+        </div>
+
+        <div class="modal modal-closed" id="modal4" aria-role="dialog">
+          <h1>音樂組</h1>
+          <p>組長</p>
+          <p>
+            工作內容：協助開發企劃遊戲、和非技術人員討論需求並且實作且能夠獨自完成交辦的工作項目。
+          </p>
+          <ul>
+            <li><a>具備配樂的創作經驗</a></li>
+            <li><a>對聲音／音樂有一定的敏感度</a></li>
+            <li><a>了解各種音效與配樂帶來的效果與適合應用的時機</a></li>
+            <li><a>具備規劃進度、流程與分工的能力</a></li>
+            <li><a>善於溝通</a></li>
+            <li><a>有一定的時間能參與企劃</a></li>
+          </ul>
+
+          <p>成員</p>
+          <p>
+            工作內容：協助開發企劃遊戲、和非技術人員討論需求並且實作且能夠獨自完成交辦的工作項目。
+          </p>
+          <ul>
+            <li><a>具備配樂的創作經驗</a></li>
+            <li><a>對聲音／音樂有一定的敏感度</a></li>
+            <li><a>了解各種音效與配樂帶來的效果與適合應用的時機</a></li>
+          </ul>
+
+          <button class="modal-close">OK</button>
+        </div>
+
+        <!-- <div id="content1" class="modal-content">Content for Button 1</div>
+        <div id="content2" class="modal-content">Content for Button 2</div>
+        <div id="content3" class="modal-content">Content for Button 3</div>
+        <div id="content4" class="modal-content">Content for Button 4</div> -->
+
         <div class="modal-overlay"></div>
         <nav class="nav-4">
           <ion-icon class="btn-4 prev-4" name="arrow-back-outline"></ion-icon>
@@ -609,45 +732,6 @@
 
       <!-- 111111111111111111111111111111111111111111111111111111 -->
       <!-- 組別介紹 -->
-
-      <!--         
-        <div class="container text-center mar">
-          <span class="item-subheading">ABOUT</span>
-          <p class="item-title">招募要求</p>
-          <p>
-            特質：負責、有創意、敢說話、好溝通 > NG：脾氣／口氣不穩、各社黑單
-          </p>
-        </div>
-
-        <div class="container text-center mar">
-          <span class="item-subheading">ABOUT</span>
-          <p class="item-title">工作模式</p>
-          <p>
-            工作 ⟺ 開會（檢查進度 ⇢ 討論 ⇢ 分配新工作） 認領工作 ⇢ 和負責人溝通
-            ⇢ 確認工作並完成 ⇢ 給負責人審稿
-          </p>
-        </div>
-
-        <div class="container text-center mar">
-          <span class="item-subheading">ABOUT</span>
-          <p class="item-title">工具</p>
-          <p>溝通與管理平台：DC、google 雲端、Notion</p>
-          <p>遊戲引擎：Unity、Ink</p>
-          <p>其他：Figma、Xmind、HackMD……</p>
-        </div>
-
-        <div class="container text-center mar">
-          <span class="item-subheading">ABOUT</span>
-          <p class="item-title">工作認領</p>
-          <p>遊戲與企劃會分不同專案，再從專案底下分工作</p>
-          <p>除了負責人以外，工作請自己認領，認領方式為下：</p>
-          <p>於會議上認領</p>
-          <p>到Notion 看有沒有可以負責的項目</p>
-          <p>
-            其他：有想做新專案可以到DC-提案提出討論，有詳細的構想就可以嘗試。
-          </p>
-        </div>
-      </section> -->
 
       <div class="container text-center" id="cta">
         <span class="subheading-1">JOIN US</span>
@@ -711,7 +795,11 @@
           <div class="container">
             <div class="jopn-text-box"></div>
             <div class="hero-btn">
-              <a href="https://forms.gle/2gUnzoqN8KWTBw7AA" class="btn"
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSee8XFDE2LxJVmgkAul1usiGzs7EBKrllxApRq39nCYzTxKdw/viewform?usp=sf_link"
+                class="btn"
+                target="_blank"
+                rel="noopener"
                 >填寫表單</a
               >
             </div>
@@ -743,7 +831,7 @@
         </div>
         <div class="social">
           <a href="#">
-            <img src="img/LOGO-web-link.png" class="web-logo" />
+            <img src="img/LOGO-web-link.png" class="web-logo" title="123" />
           </a>
           <p class="social-text">官網整頓中</p>
         </div>

@@ -817,15 +817,14 @@ document.addEventListener("click", activate, false);
 
 // ///////////////////////////////////
 // Adapted from https://github.com/udacity/ud891/tree/gh-pages/lesson2-focus/07-modals-and-keyboard-traps/solution
-
-// Will hold previously focused element
+// 將之前聚焦的元素保存起來
+// 將之前聚焦的元素保存起來
 let focusedElementBeforeModal;
 
-// Find the modal and its overlay
-const modal = document.querySelector(".modal");
+// 找到模態框及其覆蓋層
 const modalOverlay = document.querySelector(".modal-overlay");
 
-// Attach listeners to all the modal toggles
+// 將監聽器附加到所有模態切換器
 const modalToggles = document.querySelectorAll(".modal-toggle");
 
 for (let i = 0; i < modalToggles.length; i++) {
@@ -833,51 +832,54 @@ for (let i = 0; i < modalToggles.length; i++) {
 }
 
 /**
- * Opens the modal and traps focus.
+ * 打開模態框並捕獲焦點。
  */
-function openModal() {
-  // Save current focus
+function openModal(e) {
+  const modalId = e.target.getAttribute("data-modal-target");
+  const modal = document.getElementById(modalId);
+
+  // 保存當前的焦點
   focusedElementBeforeModal = document.activeElement;
 
-  // Listen for and trap the keyboard
+  // 監聽並捕獲鍵盤事件
   modal.addEventListener("keydown", trapTabKey);
 
-  // Listen for indicators to close the modal
+  // 監聽用於關閉模態框的指示器
   modalOverlay.addEventListener("click", closeModal);
 
-  // Modal close buttons
+  // 模態框關閉按鈕
   const closeButtons = modal.querySelectorAll(".modal-close");
 
-  // Attach listeners to all the close modal buttons
+  // 將監聽器附加到所有關閉模態框的按鈕
   for (let i = 0; i < closeButtons.length; i++) {
     closeButtons[i].addEventListener("click", closeModal);
   }
 
-  // Find all focusable children
+  // 查找所有可聚焦的子元素
   const focusableElementsString =
     'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
   let focusableElements = modal.querySelectorAll(focusableElementsString);
 
-  // Convert NodeList to Array
+  // 將 NodeList 轉換為 Array
   focusableElements = Array.prototype.slice.call(focusableElements);
 
   const firstTabStop = focusableElements[0];
   const lastTabStop = focusableElements[focusableElements.length - 1];
 
-  // Show the modal and overlay
+  // 顯示模態框和覆蓋層
   modal.style.display = "block";
   modalOverlay.style.display = "block";
 
-  // This just allows for the animation, not required.
+  // 這只是為了動畫，不是必需的。
   setTimeout(function () {
     modal.classList.remove("modal-closed");
   }, 10);
 
-  // Focus first child
+  // 聚焦第一個子元素
   firstTabStop.focus();
 
   function trapTabKey(e) {
-    // Check for TAB key press
+    // 檢查 TAB 鍵是否按下
     if (e.keyCode === 9) {
       // SHIFT + TAB
       if (e.shiftKey) {
@@ -885,9 +887,8 @@ function openModal() {
           e.preventDefault();
           lastTabStop.focus();
         }
-
-        // TAB
       } else {
+        // TAB
         if (document.activeElement === lastTabStop) {
           e.preventDefault();
           firstTabStop.focus();
@@ -903,19 +904,25 @@ function openModal() {
 }
 
 /**
- * Closes the modal.
+ * 關閉模態框。
  */
 function closeModal() {
-  // Animate the close
-  modal.classList.add("modal-closed");
+  const openModals = document.querySelectorAll(".modal:not(.modal-closed)");
 
-  // This setTimeout just allows for the animation, not required.
-  setTimeout(function () {
-    // Hide the modal and overlay
-    modal.style.display = "none";
-    modalOverlay.style.display = "none";
-  }, 300);
+  for (let i = 0; i < openModals.length; i++) {
+    const modal = openModals[i];
 
-  // Set focus back to element that had it before the modal was opened
+    // 添加動畫以關閉模態框
+    modal.classList.add("modal-closed");
+
+    // 這個 setTimeout 只是為了動畫，不是必需的。
+    setTimeout(function () {
+      // 隱藏模態框和覆蓋層
+      modal.style.display = "none";
+      modalOverlay.style.display = "none";
+    }, 300);
+  }
+
+  // 將焦點設置回模態框打開之前的元素
   focusedElementBeforeModal.focus();
 }

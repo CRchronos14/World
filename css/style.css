@@ -1950,6 +1950,7 @@ body {
   border-radius: 3px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   z-index: 4;
+  overflow: auto;
 }
 
 .modal-overlay {
@@ -1964,11 +1965,6 @@ body {
   background: rgba(0, 0, 0, 0.4);
 }
 
-*:focus {
-  outline: 2px solid #1160fb;
-  outline-offset: 2px;
-}
-
 .modal ul {
   margin: 25px 0 35px 0;
 }
@@ -1976,15 +1972,6 @@ body {
 .modal li:not(:last-child) {
   margin-bottom: 10px;
 }
-
-/* button {
-  background: #1160fb;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-} */
 
 .container button {
   display: block;
@@ -2010,4 +1997,27 @@ body {
 .modal-closed {
   opacity: 0;
   transform: translateY(-15px);
+}
+
+/* 留意新增的modal樣式 */
+#modal1,
+#modal2,
+#modal3,
+#modal4,
+#modal5,
+#modal6 {
+  display: none;
+  position: fixed;
+  top: 5%;
+  left: 0;
+  right: 0;
+  margin: 0 auto 0 auto;
+  background: white;
+  max-width: 1000px;
+  max-height: 500px;
+  padding: 40px;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 9;
+  overflow-y: auto; /* 允許垂直滾動 */
 }
