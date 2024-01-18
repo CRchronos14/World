@@ -34,6 +34,21 @@
   /* Navigation  */
   /* ************************* */
 
+  .modal {
+    opacity: 1;
+    transform: translateY(5%);
+  }
+
+  #modal1,
+  #modal2,
+  #modal3,
+  #modal4,
+  #modal5,
+  #modal6 {
+    max-width: 1000px;
+    max-height: 90vh;
+  }
+
   .btn-mobile-nav {
     display: block;
     position: absolute;

@@ -875,8 +875,10 @@ function openModal(e) {
   // 這只是為了動畫，不是必需的。
   setTimeout(function () {
     modal.classList.remove("modal-closed");
-  }, 10);
 
+    // 將滾動位置調整到模態框頂部
+    modal.scrollTop = 0;
+  }, 10);
   // 聚焦第一個子元素
   firstTabStop.focus();
 
