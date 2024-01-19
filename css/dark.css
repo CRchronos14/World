@@ -38,6 +38,30 @@ canvas {
   }
 }
 
+@keyframes show1 {
+  0% {
+    filter: blur(4px);
+    transform: translateY(calc(20% + 75px));
+    color: transparent;
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    color: #ffffff;
+  }
+}
+
+.item-work next-4 {
+  background-image: none;
+}
+
+.workwork {
+  padding: 4rem 0;
+
+  background-color: transparent;
+}
+
 body {
   /* background-image: url("../img/Scence-dark-1.webp"); */
   margin: 0;
