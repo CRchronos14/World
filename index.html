@@ -18,7 +18,10 @@
     <script defer src="js/try-2.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <script
+      src="https://kit.fontawesome.com/347c449850.js"
+      crossorigin="anonymous"
+    ></script>
     <script type="x-shader/x-fragment" id="fragmentShader">
       varying vec2 vUv;
       uniform float u_size;
@@ -567,7 +570,7 @@
         <!-- 開發組內容 -->
 
         <div class="modal modal-closed" id="modal1" aria-role="dialog">
-          <h1>開發組</h1>
+          <h1 class="subtitle text-center">開發組</h1>
           <p>遊戲開發</p>
           <p>
             工作內容：協助開發企劃遊戲、和非技術人員討論需求並且實作且能夠獨自完成交辦的工作項目。
@@ -579,128 +582,166 @@
             <li><a>願意多溝通，能夠與他人合作，勇於表達意見、想法</a></li>
           </ul>
 
-          <button class="modal-close">OK</button>
+          <div class="text-center">
+            <button class="modal-close">OK</button>
+          </div>
         </div>
 
         <div class="modal modal-closed" id="modal2" aria-role="dialog">
-          <h1>美術組</h1>
-          <p>場景設計</p>
-          <p>
-            工作內容：依照初步場景內容設定，編排家具、動線等。
-            也包含家具裝潢繪製設計。
-          </p>
+          <h1 class="subtitle text-center">美術組</h1>
+          <div class="about-text-box-3">
+            <p class="title-3"><i class="fa-solid fa-mitten"></i>場景設計</p>
+            <p class="sub-content">
+              工作內容：依照初步場景內容設定，編排家具、動線等。
+              也包含家具裝潢繪製設計。
+            </p>
 
-          <ul>
-            <li><a>風格：偏日系。</a></li>
-            <li><a>願意嘗試新風格與技能，可以接受溝通、獨立作業</a></li>
-            <li><a>有東西會至少二改以上的心理準備。</a></li>
-            <li><a>穩定的畫風、線條。</a></li>
-            <li><a>基礎色彩學應用，對色彩有一定的敏感度。</a></li>
-            <li><a>操作軟體多為CSP與procreate</a></li>
-            <li><a>(一定要有PS作為轉接格式) </a></li>
-          </ul>
+            <p class="title-3"><i class="fa-solid fa-mitten"></i>場景像素</p>
+            <p class="sub-content">
+              工作內容：將場景設計轉換成像素圖。 包含家具、裝潢等。
+            </p>
 
-          <p>CG圖繪製</p>
-          <p>
-            工作內容：根據劇情所需繪製需要特別演出的部分，能夠設計／繪製出大圖包含背景的人員。
-            前置設計人員： 屬於畫面設計，就是畫草稿訂方向。 完稿繪製人員：
-            屬於跟上述給的草稿跟所有統合意見做一個完稿的動作。
-          </p>
+            <p class="title-3"><i class="fa-solid fa-mitten"></i>人物像素</p>
+            <p class="sub-content">
+              工作內容：將遊戲中的人物轉換成4面/8面像素圖。 包含配飾、裝備等。
+            </p>
 
-          <p>人物像素</p>
-          <p>
-            工作內容：將遊戲中的人物轉換成4面/8面像素圖。 包含配飾、裝備等。
-          </p>
+            <p class="title-3"><i class="fa-solid fa-mitten"></i>CG圖繪製</p>
+            <p class="sub-content">
+              工作內容：根據劇情所需繪製需要特別演出的部分，能夠設計／繪製出大圖包含背景的人員。
+              前置設計人員： 屬於畫面設計，就是畫草稿訂方向。 完稿繪製人員：
+              屬於跟上述給的草稿跟所有統合意見做一個完稿的動作。
+            </p>
 
-          <p>場景像素</p>
-          <p>工作內容：將場景設計轉換成像素圖。 包含家具、裝潢等。</p>
+            <p class="title-3"><i class="fa-solid fa-ghost"></i> UI設計</p>
+            <p class="sub-content">
+              工作內容：在UX設計後進行符合遊戲主題的UI設計。
+            </p>
 
-          <p>場景設計</p>
-          <p>
-            工作內容：依照初步場景內容設定，編排家具、動線等。
-            也包含家具裝潢繪製設計。
-          </p>
-
-          <button class="modal-close">OK</button>
+            <ul>
+              <li><a>風格：偏日系。</a></li>
+              <li><a>願意嘗試新風格與技能，可以接受溝通、獨立作業</a></li>
+              <li><a>有東西會至少二改以上的心理準備。</a></li>
+              <li><a>穩定的畫風、線條。</a></li>
+              <li><a>基礎色彩學應用，對色彩有一定的敏感度。</a></li>
+              <li><a>操作軟體多為CSP與procreate</a></li>
+              <li><a>(一定要有PS作為轉接格式) </a></li>
+            </ul>
+            <div class="text-center">
+              <button class="modal-close">OK</button>
+            </div>
+          </div>
         </div>
 
         <div class="modal modal-closed" id="modal3" aria-role="dialog">
-          <h1>策畫組</h1>
+          <h1 class="subtitle text-center">策畫組</h1>
 
-          <p>關卡策畫</p>
-          <p>
-            工作內容：設定遊戲包括主、支線與副本之關卡架構、內容基礎設定。包含設定、大綱、遊玩方式、地圖等。
-          </p>
-          <ul>
-            <li><a>對各式RPG遊戲具有熱忱</a></li>
-            <li><a>願意多溝通，能夠與他人合作，勇於表達意見、想法</a></li>
-          </ul>
+          <div class="about-text-box-3">
+            <p class="title-3"><i class="fa-solid fa-ghost"></i> 系統策畫</p>
+            <p class="sub-content">
+              工作內容：撰寫遊戲內系統所需細部功能，拆分系統工程。
+            </p>
+            <p class="title-3"><i class="fa-solid fa-mitten"></i> 關卡策畫</p>
+            <p class="sub-content">
+              工作內容：設定遊戲包括主、支線與副本之關卡架構、內容基礎設定。包含設定、大綱、遊玩方式、地圖等。
+            </p>
+            <ul>
+              <li><a>對各式RPG遊戲具有熱忱</a></li>
+              <li><a>願意多溝通，能夠與他人合作，勇於表達意見、想法</a></li>
+            </ul>
 
-          <p>數值策畫</p>
-          <p>工作內容：制訂遊戲中各項參數，維持遊戲平衡與體驗。</p>
-          <ul>
-            <li><a>對各式RPG遊戲具有熱忱</a></li>
-            <li><a>願意多溝通，能夠與他人合作，勇於表達意見、想法</a></li>
-          </ul>
+            <p class="title-3"><i class="fa-solid fa-mitten"></i> 數值策畫</p>
+            <p class="sub-content">
+              工作內容：制訂遊戲中各項參數，維持遊戲平衡與體驗。
+            </p>
+            <ul>
+              <li><a>對各式RPG遊戲具有熱忱</a></li>
+              <li><a>願意多溝通，能夠與他人合作，勇於表達意見、想法</a></li>
+            </ul>
 
-          <p>主線與草稿</p>
-          <p>
-            主線分成：<br />
+            <p class="title-3"><i class="fa-solid fa-ghost"></i> UX策畫</p>
+            <p class="sub-content">工作內容：規劃遊戲中資訊介面的呈現位置。</p>
+            <p class="title-3"><i class="fa-solid fa-ghost"></i> 劇情策畫</p>
+            <p class="sub-content">
+              工作內容：整體遊戲流程架構規劃，範圍從遊戲開始至結束。
+            </p>
 
-            系統故事：<br />
-            主人公在系統中的故事發想，為最主要故事，包含了劇情流程安排、對話選項、部分彩蛋安排。
-            副本：<br />
-            副本內皆為獨立故事，構想副本內主要故事、世界觀、人物角色、主軸核心等等
-          </p>
-          <ul>
-            <li><a>有玩過遊戲或是參與企劃的經驗，需要作品集或oc介紹</a></li>
-          </ul>
+            <p class="title-3"><i class="fa-solid fa-mitten"></i>主線與草稿</p>
+            <p class="sub-content">
+              主線分成：<br />
 
-          <p>世界觀細節設定</p>
-          <p>主要世界觀之架構與細則設定與世界觀整理、統整</p>
-          <ul>
-            <li><a>有玩過遊戲或是參與企劃的經驗，需要作品集或oc介紹</a></li>
-          </ul>
+              <i class="fa-solid fa-scroll"></i> 系統故事<br />
+              主人公在系統中的故事發想，為最主要故事，包含了劇情流程安排、對話選項、部分彩蛋安排。
+              <br /><i class="fa-solid fa-scroll"></i> 副本<br />
+              副本內皆為獨立故事，構想副本內主要故事、世界觀、人物角色、主軸核心等等
+            </p>
+            <ul>
+              <li><a>有玩過遊戲或是參與企劃的經驗，需要作品集或oc介紹</a></li>
+            </ul>
 
-          <p>文手</p>
-          <p>書寫所有文案、對話、選項、但不參與構想與討論。</p>
-          <ul>
-            <li><a>有玩過遊戲或是參與企劃的經驗，需要作品集或oc介紹</a></li>
-          </ul>
+            <p class="title-3">
+              <i class="fa-solid fa-mitten"></i>世界觀細節設定
+            </p>
+            <p class="sub-content">
+              工作內容：主要世界觀之架構與細則設定與世界觀整理、統整
+            </p>
+            <ul>
+              <li><a>有玩過遊戲或是參與企劃的經驗，需要作品集或oc介紹</a></li>
+            </ul>
 
-          <p>評委</p>
-          <p>不參與任何構想與書寫，給予建議和抓出劇情上的問題。</p>
-          <ul>
-            <li>
-              <a>對於遊戲有評論、想法，需要較快的回覆速度及完善的表達能力</a>
-            </li>
-          </ul>
+            <p class="title-3"><i class="fa-solid fa-mitten"></i>文手</p>
+            <p class="sub-content">
+              工作內容：書寫所有文案、對話、選項、但不參與構想與討論。
+            </p>
+            <ul>
+              <li><a>有玩過遊戲或是參與企劃的經驗，需要作品集或oc介紹</a></li>
+            </ul>
 
-          <button class="modal-close">OK</button>
+            <p class="title-3"><i class="fa-solid fa-mitten"></i>評委</p>
+            <p class="sub-content">
+              工作內容：不參與任何構想與書寫，給予建議和抓出劇情上的問題。
+            </p>
+            <ul>
+              <li>
+                <a>對於遊戲有評論、想法，需要較快的回覆速度及完善的表達能力</a>
+              </li>
+            </ul>
+            <div class="text-center">
+              <button class="modal-close">OK</button>
+            </div>
+          </div>
         </div>
 
         <div class="modal modal-closed" id="modal4" aria-role="dialog">
-          <h1>音樂組</h1>
-          <p>組長</p>
-          <p>工作內容：【製作】場景配樂 【尋找】適合的遊戲音效</p>
-          <ul>
-            <li><a>具備配樂的創作經驗</a></li>
-            <li><a>對聲音／音樂有一定的敏感度</a></li>
-            <li><a>了解各種音效與配樂帶來的效果與適合應用的時機</a></li>
-            <li><a>具備規劃進度、流程與分工的能力</a></li>
-            <li><a>善於溝通</a></li>
-            <li><a>有一定的時間能參與企劃</a></li>
-          </ul>
+          <h1 class="subtitle text-center">音樂組</h1>
+          <div class="about-text-box-3">
+            <p class="title-3"><i class="fa-solid fa-mitten"></i>組長</p>
+            <p class="sub-content">
+              工作內容：【製作】場景配樂 【尋找】適合的遊戲音效
+            </p>
+            <ul>
+              <li><a>具備配樂的創作經驗</a></li>
+              <li><a>對聲音／音樂有一定的敏感度</a></li>
+              <li><a>了解各種音效與配樂帶來的效果與適合應用的時機</a></li>
+              <li><a>具備規劃進度、流程與分工的能力</a></li>
+              <li><a>善於溝通</a></li>
+              <li><a>有一定的時間能參與企劃</a></li>
+            </ul>
 
-          <p>成員</p>
-          <p>工作內容：【製作】場景配樂 【尋找】適合的遊戲音效</p>
-          <ul>
-            <li><a>具備配樂的創作經驗</a></li>
-            <li><a>對聲音／音樂有一定的敏感度</a></li>
-            <li><a>了解各種音效與配樂帶來的效果與適合應用的時機</a></li>
-          </ul>
+            <p class="title-3"><i class="fa-solid fa-mitten"></i>成員</p>
+            <p class="sub-content">
+              工作內容：【製作】場景配樂 【尋找】適合的遊戲音效
+            </p>
+            <ul>
+              <li><a>具備配樂的創作經驗</a></li>
+              <li><a>對聲音／音樂有一定的敏感度</a></li>
+              <li><a>了解各種音效與配樂帶來的效果與適合應用的時機</a></li>
+            </ul>
 
-          <button class="modal-close">OK</button>
+            <div class="text-center">
+              <button class="modal-close">OK</button>
+            </div>
+          </div>
         </div>
 
         <!-- <div id="content1" class="modal-content">Content for Button 1</div>

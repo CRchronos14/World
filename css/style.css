@@ -1986,7 +1986,7 @@ body {
 
 .modal {
   opacity: 1;
-  transform: translateY(30%);
+  transform: translateY(20%);
   transition: all 0.3s;
   z-index: 9;
 }
@@ -2022,10 +2022,65 @@ body {
   overflow-y: auto; /* 允許垂直滾動 */
 }
 
+/* 滾動條外觀 */
+.modal::-webkit-scrollbar,
+.modal-closed::-webkit-scrollbar {
+  background: #c395ec;
+  width: 5px;
+}
+.modal::-webkit-scrollbar-button,
+.modal-closed::-webkit-scrollbar-button {
+  /* background: #6c0786; */
+  width: 5px;
+  border-radius: 4px;
+}
+.modal::-webkit-scrollbar-thumb,
+.modal-closed::-webkit-scrollbar-thumb {
+  background: #6c0786;
+  border-radius: 4px;
+}
+
+.modal-close {
+  width: fit-content;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgb(8, 8, 8);
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background-color: rgba(217, 0, 255, 0.1);
+  color: rgb(183, 75, 237);
+  border: 2px solid rgb(192, 88, 244);
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
 /* -工作模式------------------------------- */
 
 .workwork {
   padding: 4rem 0;
 
   background-color: white;
+}
+
+/* 小視窗 */
+
+.title-3 {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  font-size: 1.6rem;
+  background-color: #e7c0e7;
+  border-radius: 100px;
+  margin-right: 0.8rem;
+  margin-bottom: 2.4rem;
+  margin-top: 3.6rem;
+}
+
+.about-text-box-3 {
+  padding: 0 4.8rem 4.8rem 4.8rem;
+  line-height: 3.6rem;
 }
