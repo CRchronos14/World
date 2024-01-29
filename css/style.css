@@ -2080,7 +2080,33 @@ body {
   margin-top: 3.6rem;
 }
 
+.title-4 {
+  display: inline-block;
+  padding: 0.4rem 1.2rem;
+  font-size: 1.6rem;
+  background-color: rgb(211, 192, 231);
+  border-radius: 100px;
+  margin-right: 0.8rem;
+  margin-bottom: 1.6rem;
+  margin-top: 3.6rem;
+}
+
 .about-text-box-3 {
   padding: 0 4.8rem 4.8rem 4.8rem;
   line-height: 3.6rem;
+}
+
+.list-1 {
+  list-style: none;
+}
+
+.list-item-1 {
+  color: #000;
+  display: flex;
+  align-items: center;
+  font-family: Noto Serif TC;
+  font-size: 1.6rem;
+  font-style: normal;
+  font-weight: 250;
+  line-height: normal;
 }
