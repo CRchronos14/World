@@ -205,6 +205,25 @@ iframe {
   background-color: transparent;
 }
 
+.anim {
+  animation: show1 0.75s ease-out 1s forwards;
+  color: transparent;
+}
+
+@keyframes show1 {
+  0% {
+    filter: blur(4px);
+    transform: translateY(calc(20% + 75px));
+    color: transparent;
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    color: #bdbdbd;
+  }
+}
+
 .des-title {
   color: #e7c0e7;
 }
@@ -236,16 +255,25 @@ iframe {
 }
 
 .list-item {
-  color: #fff;
+  color: #bdbdbd;
 }
 
 .join-en,
 .join-zh-1,
 .join-zh-2 {
-  color: #fff;
+  color: #bdbdbd;
 }
 
 .section-connection {
+  background-color: transparent;
+}
+
+.flow {
+  background-color: transparent;
+  border-style: dashed;
+}
+
+.bla {
   background-color: transparent;
 }
 

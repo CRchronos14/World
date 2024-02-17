@@ -135,7 +135,7 @@ body {
   font-family: "Noto Serif TC", serif;
   font-weight: 700;
   line-height: 2;
-  font-size: 3.6rem;
+  font-size: 3.2rem;
   margin-bottom: 9.6rem;
 }
 
@@ -146,7 +146,6 @@ body {
   font-weight: 700;
   color: #cacaca;
   letter-spacing: 0.5rem;
-  margin-bottom: 1.6rem;
 }
 
 .text-center {
@@ -649,7 +648,8 @@ main {
 }
 
 .sentence {
-  font-size: 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
   margin: 1.6rem 0;
 }
 
@@ -918,13 +918,21 @@ main {
 
 .join-grid {
   display: flex;
+
   padding: 4.8rem 0;
+  /* margin-left: 25%; */
+}
+.join-grid:nth-child(1) {
+  padding-top: 9.6rem;
 }
 
-.join-grid:nth-child(2) {
-  margin-left: 50%;
-  /* align-self: self-end; */
+.join-grid:nth-child(3) {
+  padding-bottom: 9.6rem;
 }
+/* .join-grid:nth-child(2) {
+  margin-left: 50%;
+  align-self: self-end;
+} */
 
 .join-right {
   float: right;
@@ -947,6 +955,7 @@ main {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  margin-right: 10.6rem;
 }
 
 .join-zh-2 {
@@ -1593,8 +1602,10 @@ body {
   background-position: center;
   background-size: cover;
   border-radius: 20px;
-  box-shadow: 0 20px 30px rgba(255, 255, 255, 0.3) inset;
+  box-shadow: 0 20px 30px rgba(255, 255, 255, 0.03) inset;
   transition: transform 0.1s, left 0.75s, top 0.75s, width 0.75s, height 0.75s;
+  -webkit-filter: brightness(500%) saturate(200%); /* Safari */
+  filter: brightness(500%) saturate(200%);
 
   &:nth-child(1),
   &:nth-child(2) {
@@ -1606,6 +1617,8 @@ body {
     border-radius: 0;
     box-shadow: none;
     opacity: 1;
+    -webkit-filter: brightness(100%); /* Safari */
+    filter: brightness(100%);
   }
 
   &:nth-child(3) {
@@ -2079,6 +2092,7 @@ body {
   margin-right: 0.8rem;
   margin-bottom: 2.4rem;
   margin-top: 3.6rem;
+  color: #161616;
 }
 
 .title-4 {
@@ -2090,6 +2104,7 @@ body {
   margin-right: 0.8rem;
   margin-bottom: 1.6rem;
   margin-top: 3.6rem;
+  color: #161616;
 }
 
 .about-text-box-3 {
@@ -2110,4 +2125,25 @@ body {
   font-style: normal;
   font-weight: 250;
   line-height: normal;
+}
+
+.ba {
+  pointer-events: none;
+}
+.ba img {
+  pointer-events: none;
+  object-fit: contain;
+  -webkit-filter: opacity(50%); /* Safari */
+  filter: opacity(50%);
+}
+
+.flow {
+  padding: 1.2rem 2.4rem;
+  background-color: rgb(248, 248, 248);
+}
+
+.bla {
+  padding-bottom: 1.2rem;
+  margin: 0;
+  background-color: #000;
 }
